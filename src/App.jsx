@@ -20,11 +20,11 @@ function App() {
   const handleSetIsSummonerInfoVisible = (summonerInfo) => {
     console.log("handleSetIsSummonerInfoVisible");
     setIsSummonerInfoVisible(true);
-    setCurrentSummonerInfo(summonerInfo);
+    handleSetCurrentSummonerInfo(summonerInfo);
   };
 
   const handleSetCurrentSummonerInfo = (summonerInfo) => {
-    axios.get(`http://localhost:3000/summoner_infos/${summonerINfo.id}.json`).then((response) => {
+    axios.get(`http://localhost:3000/summoner_infos/${summonerInfo.id}.json`).then((response) => {
       console.log("handleSetCurrentSummonerInfo", response.data);
       setCurrentSummonerInfo(response.data);
     });
