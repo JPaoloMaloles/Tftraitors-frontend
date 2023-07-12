@@ -66,7 +66,7 @@ export function Content() {
   useEffect(handleSetSummonerInfos, []);
 
   return (
-    <div>
+    <div className="container">
       <h1> App Page </h1>
       <Signup />
       <Login />
