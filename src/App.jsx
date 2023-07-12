@@ -45,6 +45,21 @@ function App() {
     });
   };
 
+  const handleUpdateSummonerInfo = (id, params) => {
+    axios.patch(`http://localhost:3000/summoner_infos/${id}.json`, params).then((response) => {
+      setSummonerInfos(
+        summonerInfos.map((summonerInfo) => {
+          if (summonerInfo.id == response.data.id) {
+            return response.data;
+          } else {
+            return summonerInfo;
+          }
+        })
+      );
+      onClose();
+    });
+  };
+
   useEffect(handleSetSummonerInfos, []);
 
   return (
@@ -60,7 +75,10 @@ function App() {
         handleSetIsSummonerInfoVisible={handleSetIsSummonerInfoVisible}
       />
       <Modal show={isSummonerInfoVisible} onClose={onClose}>
-        <SummonerInfoShow currentSummonerInfo={currentSummonerInfo} />
+        <SummonerInfoShow
+          currentSummonerInfo={currentSummonerInfo}
+          handleUpdateSummonerInfo={handleUpdateSummonerInfo}
+        />
       </Modal>
     </>
   );
