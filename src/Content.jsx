@@ -38,14 +38,15 @@ export function Content() {
     setIsSummonerInfoVisible(false);
   };
 
-  const handleCreateSummonerInfo = (params) => {
+  const handleCreateSummonerInfo = (params, successCallback) => {
     axios.post(`http://localhost:3000/summoner_infos.json`, params).then((response) => {
       console.log("handleCreateSummonerInfo", response.data);
       setSummonerInfos([...summonerInfos, response.data]);
+      successCallback();
     });
   };
 
-  const handleUpdateSummonerInfo = (id, params) => {
+  const handleUpdateSummonerInfo = (id, params, successCallback) => {
     axios.patch(`http://localhost:3000/summoner_infos/${id}.json`, params).then((response) => {
       setSummonerInfos(
         summonerInfos.map((summonerInfo) => {
@@ -56,6 +57,7 @@ export function Content() {
           }
         })
       );
+      successCallback();
       onClose();
     });
   };

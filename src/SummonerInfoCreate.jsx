@@ -2,7 +2,7 @@ export function SummonerInfoCreate(props) {
   const handleOnSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
-    props.handleCreateSummonerInfo(params, () => event.target.reset);
+    props.handleCreateSummonerInfo(params, () => event.target.reset());
   };
 
   return (

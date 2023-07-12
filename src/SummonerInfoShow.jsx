@@ -2,7 +2,7 @@ export function SummonerInfoShow(props) {
   const handleOnSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
-    props.handleUpdateSummonerInfo(props.currentSummonerInfo.id, params, () => event.target.reset);
+    props.handleUpdateSummonerInfo(props.currentSummonerInfo.id, params, () => event.target.reset());
   };
 
   const handleOnClick = () => {
@@ -55,6 +55,7 @@ export function SummonerInfoShow(props) {
       <button type="input" onClick={handleOnClick}>
         Destroy Summoner Info
       </button>
+      <b>{props.currentSummonerInfo.tier}</b>
     </>
   );
 }
