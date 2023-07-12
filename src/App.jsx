@@ -5,6 +5,9 @@ import axios from "axios";
 import { Modal } from "./Modal";
 import { SummonerInfoShow } from "./SummonerInfoShow";
 import { SummonerInfoCreate } from "./SummonerInfoCreate";
+import { Signup } from "./Signup";
+import { Login } from "./Login";
+import { LogoutLink } from "./LogoutLink";
 
 function App() {
   const [summonerInfos, setSummonerInfos] = useState([]);
@@ -47,6 +50,10 @@ function App() {
   return (
     <>
       <h1> App Page </h1>
+      <Signup />
+      <Login />
+      <LogoutLink />
+
       <SummonerInfoCreate handleCreateSummonerInfo={handleCreateSummonerInfo} />
       <SummonerInfoIndex
         summonerInfos={summonerInfos}
