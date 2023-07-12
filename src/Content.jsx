@@ -28,7 +28,7 @@ export function Content() {
   };
 
   const onClose = () => {
-    setIsSummonerInfoVisibgule(false);
+    setIsSummonerInfoVisibule(false);
   };
 
   const handleCreateSummonerInfo = (params, successCallback) => {
