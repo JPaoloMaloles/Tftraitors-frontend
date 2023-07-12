@@ -23,16 +23,16 @@ export function Content() {
 
   const handleSetIsSummonerInfoVisible = (summonerInfo) => {
     console.log("handleSetIsSummonerInfoVisible");
+    setCurrentSummonerInfo(summonerInfo);
     setIsSummonerInfoVisible(true);
-    handleSetCurrentSummonerInfo(summonerInfo);
   };
 
-  const handleSetCurrentSummonerInfo = (summonerInfo) => {
-    axios.get(`http://localhost:3000/summoner_infos/${summonerInfo.id}.json`).then((response) => {
-      console.log("handleSetCurrentSummonerInfo", response.data);
-      setCurrentSummonerInfo(response.data);
-    });
-  };
+  // const handleSetCurrentSummonerInfo = (summonerInfo) => {
+  //   axios.get(`http://localhost:3000/summoner_infos/${summonerInfo.id}.json`).then((response) => {
+  //     console.log("handleSetCurrentSummonerInfo", response.data);
+  //     setCurrentSummonerInfo(response.data);
+  //   });
+  // };
 
   const onClose = () => {
     setIsSummonerInfoVisible(false);
@@ -61,22 +61,6 @@ export function Content() {
       onClose();
     });
   };
-
-  // const handleUpdateSummonerInfo = (id, params, successCallback) => {
-  //   axios.patch(`http://localhost:3000/summoner_infos/${id}.json`, params).then((response) => {
-  //     setSummonerInfos(
-  //       summonerInfos.map((summonerInfo) => {
-  //         if (summonerInfo.id === response.data.id) {
-  //           return response.data;
-  //         } else {
-  //           return summonerInfo;
-  //         }
-  //       })
-  //     );
-  //     successCallback();
-  //     onClose();
-  //   });
-  // };
 
   const handleDestroySummonerInfo = (summonerInfo) => {
     console.log("handleDestroy");
