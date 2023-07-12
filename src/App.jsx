@@ -49,13 +49,21 @@ function App() {
     axios.patch(`http://localhost:3000/summoner_infos/${id}.json`, params).then((response) => {
       setSummonerInfos(
         summonerInfos.map((summonerInfo) => {
-          if (summonerInfo.id == response.data.id) {
+          if (summonerInfo.id === response.data.id) {
             return response.data;
           } else {
             return summonerInfo;
           }
         })
       );
+      onClose();
+    });
+  };
+
+  const handleDestroySummonerInfo = (summonerInfo) => {
+    console.log("handleDestroy");
+    axios.delete(`http://localhost:3000/summoner_infos/${summonerInfo.id}.json`).then(() => {
+      setSummonerInfos(summonerInfos.filter((s) => s.id !== summonerInfo.id));
       onClose();
     });
   };
@@ -78,6 +86,7 @@ function App() {
         <SummonerInfoShow
           currentSummonerInfo={currentSummonerInfo}
           handleUpdateSummonerInfo={handleUpdateSummonerInfo}
+          handleDestroySummonerInfo={handleDestroySummonerInfo}
         />
       </Modal>
     </>

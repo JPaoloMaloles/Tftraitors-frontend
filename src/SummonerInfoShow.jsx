@@ -5,6 +5,10 @@ export function SummonerInfoShow(props) {
     props.handleUpdateSummonerInfo(props.currentSummonerInfo.id, params, () => event.target.reset);
   };
 
+  const handleOnClick = () => {
+    props.handleDestroySummonerInfo(props.currentSummonerInfo);
+  };
+
   return (
     <>
       <h1> SummonerInfoShow</h1>
@@ -48,6 +52,9 @@ export function SummonerInfoShow(props) {
         </div>
         <button type="submit"> Update Summoner Info </button>
       </form>
+      <button type="input" onClick={handleOnClick}>
+        Destroy Summoner Info
+      </button>
     </>
   );
 }
