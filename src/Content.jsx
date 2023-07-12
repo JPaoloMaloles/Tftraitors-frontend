@@ -27,15 +27,8 @@ export function Content() {
     setIsSummonerInfoVisible(true);
   };
 
-  // const handleSetCurrentSummonerInfo = (summonerInfo) => {
-  //   axios.get(`http://localhost:3000/summoner_infos/${summonerInfo.id}.json`).then((response) => {
-  //     console.log("handleSetCurrentSummonerInfo", response.data);
-  //     setCurrentSummonerInfo(response.data);
-  //   });
-  // };
-
   const onClose = () => {
-    setIsSummonerInfoVisible(false);
+    setIsSummonerInfoVisibgule(false);
   };
 
   const handleCreateSummonerInfo = (params, successCallback) => {
