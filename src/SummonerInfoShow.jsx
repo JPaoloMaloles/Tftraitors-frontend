@@ -24,31 +24,31 @@ export function SummonerInfoShow(props) {
       <h1> Update </h1>
       <form onSubmit={handleOnSubmit}>
         <div>
-          puuid: <input name="puuid" defaultValue={props.currentSummonerInfo.puuid} type="text"></input>
+          puuid: <input name="puuid" defaultValue={props.currentSummonerInfo.puuid} type="text" />
         </div>
         <div>
-          tier: <input name="tier" defaultValue={props.currentSummonerInfo.tier} type="text"></input>
+          tier: <input name="tier" defaultValue={props.currentSummonerInfo.tier} type="text" />
         </div>
         <div>
-          rank: <input name="rank" defaultValue={props.currentSummonerInfo.rank} type="text"></input>
+          rank: <input name="rank" defaultValue={props.currentSummonerInfo.rank} type="text" />
         </div>
         <div>
           league_points:{" "}
-          <input name="league_points" defaultValue={props.currentSummonerInfo.league_points} type="text"></input>
+          <input name="league_points" defaultValue={props.currentSummonerInfo.league_points} type="text" />
         </div>
         <div>
           riot_summoner_id:{" "}
-          <input name="riot_summoner_id" defaultValue={props.currentSummonerInfo.riot_summoner_id} type="text"></input>
+          <input name="riot_summoner_id" defaultValue={props.currentSummonerInfo.riot_summoner_id} type="text" />
         </div>
         <div>
           summoner_name:{" "}
-          <input name="summoner_name" defaultValue={props.currentSummonerInfo.summoner_name} type="text"></input>
+          <input name="summoner_name" defaultValue={props.currentSummonerInfo.summoner_name} type="text" />
         </div>
         <div>
-          wins: <input name="wins" defaultValue={props.currentSummonerInfo.wins} type="text"></input>
+          wins: <input name="wins" defaultValue={props.currentSummonerInfo.wins} type="text" />
         </div>
         <div>
-          losses: <input name="losses" defaultValue={props.currentSummonerInfo.losses} type="text"></input>
+          losses: <input name="losses" defaultValue={props.currentSummonerInfo.losses} type="text" />
         </div>
         <button type="submit"> Update Summoner Info </button>
       </form>
