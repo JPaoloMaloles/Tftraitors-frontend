@@ -71,7 +71,7 @@ export function Content() {
   useEffect(handleSetSummonerInfos, []);
 
   return (
-    <>
+    <div>
       <h1> App Page </h1>
       <Signup />
       <Login />
@@ -89,6 +89,6 @@ export function Content() {
           handleDestroySummonerInfo={handleDestroySummonerInfo}
         />
       </Modal>
-    </>
+    </div>
   );
 }
