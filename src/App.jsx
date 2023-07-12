@@ -4,6 +4,7 @@ import { SummonerInfoIndex } from "./SummonerInfoIndex";
 import axios from "axios";
 import { Modal } from "./Modal";
 import { SummonerInfoShow } from "./SummonerInfoShow";
+import { SummonerInfoCreate } from "./SummonerInfoCreate";
 
 function App() {
   const [summonerInfos, setSummonerInfos] = useState([]);
@@ -34,11 +35,19 @@ function App() {
     setIsSummonerInfoVisible(false);
   };
 
+  const handleCreateSummonerInfo = (params) => {
+    axios.post(`http://localhost:3000/summoner_infos.json`, params).then((response) => {
+      console.log("handleCreateSummonerInfo", response.data);
+      setSummonerInfos([...summonerInfos, response.data]);
+    });
+  };
+
   useEffect(handleSetSummonerInfos, []);
 
   return (
     <>
       <h1> App Page </h1>
+      <SummonerInfoCreate handleCreateSummonerInfo={handleCreateSummonerInfo} />
       <SummonerInfoIndex
         summonerInfos={summonerInfos}
         handleSetIsSummonerInfoVisible={handleSetIsSummonerInfoVisible}
