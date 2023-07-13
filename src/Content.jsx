@@ -8,6 +8,7 @@ import { SummonerInfoCreate } from "./SummonerInfoCreate";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
+import { CardFunction } from "./Card";
 
 export function Content() {
   const [summonerInfos, setSummonerInfos] = useState([]);
@@ -71,6 +72,7 @@ export function Content() {
       <Signup />
       <Login />
       <LogoutLink />
+      <CardFunction />
 
       <SummonerInfoCreate handleCreateSummonerInfo={handleCreateSummonerInfo} />
       <SummonerInfoIndex
