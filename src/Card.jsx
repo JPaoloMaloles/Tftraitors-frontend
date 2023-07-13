@@ -1,4 +1,4 @@
-import Accordion from "react-bootstrap/Accordion";
+// import Accordion from "react-bootstrap/Accordion";
 
 export function CardFunction() {
   return (
@@ -12,7 +12,7 @@ export function CardFunction() {
         </div>
       </div>
 
-      <Accordion defaultActiveKey="0">
+      {/* <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
           <Accordion.Header>Accordion Item #1</Accordion.Header>
           <Accordion.Body>
@@ -33,7 +33,7 @@ export function CardFunction() {
             anim id est laborum.
           </Accordion.Body>
         </Accordion.Item>
-      </Accordion>
+      </Accordion> */}
     </>
   );
 }
