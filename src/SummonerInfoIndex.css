@@ -4,6 +4,16 @@
   text-decoration: inherit;
 }
 
-.card-title {
-  background-color: #242424;
+h1 {
+  color: #ffffff;
+  background-image: "src/assets/images/hd-runeterra-reforged-reveal-image-source-youtube-set-9-v0-9pgcpmq31l2b1~2.jpg";
 }
+
+/* #profile-background {
+  background-image: "src/assets/images/hd-runeterra-reforged-reveal-image-source-youtube-set-9-v0-9pgcpmq31l2b1~2.jpg";
+  background-size: "cover",
+} */
+
+/* #SummonerInfoIndexContent {
+  background-color: #abc2a5;
+} */

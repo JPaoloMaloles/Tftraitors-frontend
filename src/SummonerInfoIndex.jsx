@@ -1,58 +1,62 @@
 import Accordion from "react-bootstrap/Accordion";
+import "./SummonerInfoIndex.css";
 
 export function SummonerInfoIndex(props) {
   return (
-    <>
+    <div id="SummonerInfoIndexContent">
       <h1> SummonerInfoIndex</h1>
       {props.summonerInfos.map((summonerInfo) => (
         <div key={summonerInfo.id}>
           {/* <div className="row"> */}
           <div>
             <div className="card">
-              <div className="card-body">
-                <div className="card-title">
-                  <div className="row">
-                    <div className="col-sm-2">
-                      <img
-                        src={"https://dotesports.com/wp-content/uploads/2023/07/TFT_Mortdog.jpg?w=1200"}
-                        style={{ width: "150px" }}
-                      />
-                    </div>
-                    <div className="col-sm-3">
-                      {summonerInfo.summoner_name}
-                      {}
-                    </div>
-                    <div className="col-sm-5">
-                      <b style={{ color: "red", fontSize: "16px" }}>rank: </b>
-                      {summonerInfo.rank} {summonerInfo.tier}
-                      <div className="card=text" style={{ textAlign: "center" }}>
-                        {" "}
-                        lp: {summonerInfo.league_points}
+              <div
+                id="top-card"
+                style={{
+                  backgroundImage: `url(${"src/assets/images/hd-runeterra-reforged-reveal-image-source-youtube-set-9-v0-9pgcpmq31l2b1~2.jpg"})`,
+                  backgroundSize: "cover",
+                }}
+              >
+                <div className="card-body">
+                  <div className="card-title">
+                    <div className="row">
+                      <div className="col-sm-2">
+                        <img
+                          src={"https://dotesports.com/wp-content/uploads/2023/07/TFT_Mortdog.jpg?w=1200"}
+                          style={{ width: "150px" }}
+                        />
+                      </div>
+                      <div className="col-sm-3">
+                        {summonerInfo.summoner_name}
+                        {}
+                      </div>
+                      <div className="col-sm-5">
+                        <div style={{ color: "red", fontSize: "16px", textAlign: "center" }}>
+                          {summonerInfo.rank} {summonerInfo.tier}
+                        </div>
+                        <div className="card=text" style={{ textAlign: "center" }}>
+                          {" "}
+                          lp: {summonerInfo.league_points}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="card=text">
-                  <div className="row">
-                    <div
-                      className="col-sm-3
-                    "
-                    >
-                      puuid: {summonerInfo.puuid}
+                  <div className="card=text">
+                    <div className="row">
+                      <div className="col-sm-2">
+                        <div>wins: {summonerInfo.wins}</div>
+                        <div>losses: {summonerInfo.losses}</div>
+                      </div>
+                      <div className="col-sm-5">STAT GRAPHIC</div>
+                      <div className="col-sm-5">STAT DATA</div>
                     </div>
-                    <div className="col-sm-5">aaaa</div>
                   </div>
+                  <button type="input" onClick={() => props.handleSetIsSummonerInfoVisible(summonerInfo)}>
+                    Show More
+                  </button>
+                  <p></p>
                 </div>
-                <p className="card=text"> league_points: {summonerInfo.league_points}</p>
-                <p className="card=text"> riot_summoner_id: {summonerInfo.riot_summoner_id}</p>
-                <p className="card=text"> summoner_name: {summonerInfo.summoner_name}</p>
-                <p className="card=text"> wins: {summonerInfo.wins}</p>
-                <p className="card=text"> losses: {summonerInfo.losses}</p>
-                <button type="input" onClick={() => props.handleSetIsSummonerInfoVisible(summonerInfo)}>
-                  Show More
-                </button>
-                <p></p>
 
                 <h2> Recent Matches </h2>
                 <Accordion>
@@ -91,6 +95,6 @@ export function SummonerInfoIndex(props) {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 }
