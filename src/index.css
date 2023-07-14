@@ -7,7 +7,7 @@ html {
 #root {
   /* font-family: 'Noto Sans Javanese', sans-serif; */
   font-family: 'Merriweather', serif;
-  background-image: url("src/assets/images/tft_Set_9_rock_big.jpeg");
-  background-size: "cover";
-  background-repeat: "no-repeat"
+  background-image: url("src/assets/images/SCENE_2.png");
+  background-size: 1200px 1200px;
+  /* background-repeat: "no-repeat" */
 }
