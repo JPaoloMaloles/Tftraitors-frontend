@@ -67,8 +67,7 @@ export function Content() {
 
   const handleImportSummonerInfo = (region, summonerName, params, successCallback) => {
     console.log("AAAAAAAAAAAAAAAAAAA", region, summonerName);
-    console.log("BBBBBBBBBBBBBBBBBBBB", import.meta.env.VITE_RIOT_KEY);
-    console.log("CCCCCCCCCCCCCCCCCCCC", params.get("region"));
+    console.log("BBBBBBBBBBBBBBBBBBB", params.get("region"));
 
     axios.post(`http://localhost:3000/riot_test/${region}/${summonerName}.json`, params).then((response) => {
       console.log("handleImportSummonerInfo", response.data);
