@@ -65,15 +65,24 @@ export function Content() {
     });
   };
 
-  const handleImportSummonerInfo = (region, summonerName, successCallback) => {
+  const handleImportSummonerInfo = (region, summonerName, params, successCallback) => {
     console.log("AAAAAAAAAAAAAAAAAAA", region, summonerName);
     console.log("BBBBBBBBBBBBBBBBBBBB", import.meta.env.VITE_RIOT_KEY);
+    console.log("CCCCCCCCCCCCCCCCCCCC", params.get("region"));
 
-    axios.get(`http://localhost:3000/riot_first.json`).then((response) => {
+    axios.post(`http://localhost:3000/riot_test/${region}/${summonerName}.json`, params).then((response) => {
       console.log("handleImportSummonerInfo", response.data);
       setSummonerInfos([...summonerInfos, response.data]);
       successCallback();
     });
+
+    // // +++++++++++++++++++++++++ Functional for riot_first, fixed params ++++++++++++++++++
+    // axios.get(`http://localhost:3000/riot_first.json`).then((response) => {
+    //   console.log("handleImportSummonerInfo", response.data);
+    //   setSummonerInfos([...summonerInfos, response.data]);
+    //   successCallback();
+    // });
+    // // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     // =====================================================================================================================================================
     //#-----------------------------------------Blocked by cors policy, should use backend instead
