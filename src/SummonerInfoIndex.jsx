@@ -14,15 +14,16 @@ export function SummonerInfoIndex(props) {
                 <div className="card-body">
                   <div className="card-title">
                     <div className="row">
-                      <div className="col-sm-2">
+                      <div className="col-sm-3">
                         <img
                           src={"https://dotesports.com/wp-content/uploads/2023/07/TFT_Mortdog.jpg?w=1200"}
-                          style={{ width: "150px" }}
+                          style={{ width: "120px" }}
                         />
                       </div>
-                      <div className="col-sm-3">
+                      <div className="col-sm-4" style={{ color: "blue", fontSize: "20px" }}>
+                        <p></p>
                         {summonerInfo.summoner_name}
-                        {}
+                        <p></p>
                       </div>
                       <div className="col-sm-5">
                         <div style={{ color: "red", fontSize: "16px", textAlign: "center" }}>
