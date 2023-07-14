@@ -65,9 +65,15 @@ export function Content() {
     });
   };
 
-  const handleImportSummonerInfo = (region, summonerName) => {
+  const handleImportSummonerInfo = (region, summonerName, successCallback) => {
     console.log("AAAAAAAAAAAAAAAAAAA", region, summonerName);
     console.log("BBBBBBBBBBBBBBBBBBBB", import.meta.env.VITE_RIOT_KEY);
+
+    axios.get(`http://localhost:3000/riot_first.json`).then((response) => {
+      console.log("handleImportSummonerInfo", response.data);
+      setSummonerInfos([...summonerInfos, response.data]);
+      successCallback();
+    });
 
     // =====================================================================================================================================================
     //#-----------------------------------------Blocked by cors policy, should use backend instead
@@ -98,9 +104,9 @@ export function Content() {
       <Login />
       <LogoutLink />
       <CardFunction />
-      <ImportSummonerInfo handleImportSummonerInfo={handleImportSummonerInfo} />
 
       <SummonerInfoCreate handleCreateSummonerInfo={handleCreateSummonerInfo} />
+      <ImportSummonerInfo handleImportSummonerInfo={handleImportSummonerInfo} />
       <SummonerInfoIndex
         summonerInfos={summonerInfos}
         handleSetIsSummonerInfoVisible={handleSetIsSummonerInfoVisible}

@@ -5,7 +5,7 @@ export function SummonerInfoIndex(props) {
   return (
     <div id="SummonerInfoIndexContent">
       <h1> SummonerInfoIndex</h1>
-      {props.summonerInfos.map((summonerInfo) => (
+      {[...props.summonerInfos].reverse().map((summonerInfo) => (
         <div key={summonerInfo.id}>
           {/* <div className="row"> */}
           <div>
