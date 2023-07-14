@@ -69,6 +69,7 @@ export function Content() {
     console.log("AAAAAAAAAAAAAAAAAAA", region, summonerName);
     console.log("BBBBBBBBBBBBBBBBBBBB", import.meta.env.VITE_RIOT_KEY);
 
+    // =====================================================================================================================================================
     //#-----------------------------------------Blocked by cors policy, should use backend instead
     // axios
     //   .get(
@@ -78,7 +79,11 @@ export function Content() {
     //   )
     //   .then((response) => {
     //     console.log("handleImportSummonerInfo", response.data);
+    // //    the response should be a json with the new information for that summoner (this will have to be iterated over with map for matches, just like we did on request.rb). A theoretical handleImportMatchIds shoudl be called accepting what the request needs, and within there the handleImportMatch and handleImportMatchSummonerPerformance.
     //   });
+    // =====================================================================================================================================================
+
+    // need to make web request to my backend, which will then perform the same action from the backend. Once info is retrieved, need to update the frontend so that it can rerender with the new data.
 
     // I will have to write code to update the frontend's info to match the backend, for this one it's [...summonerInfos, response.data]
     //functions to do axios.get match_strings, then another two methods to make the posts
