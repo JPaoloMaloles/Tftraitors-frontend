@@ -65,6 +65,25 @@ export function Content() {
     });
   };
 
+  const handleImportSummonerInfo = (region, summonerName) => {
+    console.log("AAAAAAAAAAAAAAAAAAA", region, summonerName);
+    console.log("BBBBBBBBBBBBBBBBBBBB", import.meta.env.VITE_RIOT_KEY);
+
+    //#-----------------------------------------Blocked by cors policy, should use backend instead
+    // axios
+    //   .get(
+    //     `https://${region}.api.riotgames.com/tft/summoner/v1/summoners/by-name/${summonerName}?api_key=${
+    //       import.meta.env.VITE_RIOT_KEY
+    //     }`
+    //   )
+    //   .then((response) => {
+    //     console.log("handleImportSummonerInfo", response.data);
+    //   });
+
+    // I will have to write code to update the frontend's info to match the backend, for this one it's [...summonerInfos, response.data]
+    //functions to do axios.get match_strings, then another two methods to make the posts
+  };
+
   useEffect(handleSetSummonerInfos, []);
 
   return (
@@ -74,7 +93,7 @@ export function Content() {
       <Login />
       <LogoutLink />
       <CardFunction />
-      <ImportSummonerInfo />
+      <ImportSummonerInfo handleImportSummonerInfo={handleImportSummonerInfo} />
 
       <SummonerInfoCreate handleCreateSummonerInfo={handleCreateSummonerInfo} />
       <SummonerInfoIndex
