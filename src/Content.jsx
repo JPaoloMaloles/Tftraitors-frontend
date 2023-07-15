@@ -108,7 +108,6 @@ export function Content() {
 
   return (
     <div className="container">
-      <h1> App Page </h1>
       <Signup />
       <Login />
       <LogoutLink />
