@@ -16,7 +16,7 @@ export function ImportSummonerInfo(props) {
 
   return (
     <div>
-      <h1 className="section-title"> Import Summoner Info</h1>
+      <h1 style={{ color: "white" }}> Import Summoner Info</h1>
       <div className="card">
         <div className="card-body">
           <h1 className="card-title"></h1>
