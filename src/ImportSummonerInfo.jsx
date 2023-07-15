@@ -16,17 +16,34 @@ export function ImportSummonerInfo(props) {
 
   return (
     <div>
-      <h1>Import Summoner Info</h1>
-      <form onSubmit={handleOnSubmit}>
-        <div>
-          Region: <input name="region" type="text"></input>
+      <h1 className="section-title"> Import Summoner Info</h1>
+      <div className="card">
+        <div className="card-body">
+          <h1 className="card-title"></h1>
+
+          <p className="card=text">
+            <form onSubmit={handleOnSubmit}>
+              <div>
+                Region:
+                <p>
+                  <input name="region" type="text"></input>
+                </p>
+              </div>
+              <div>
+                Summoner Name:
+                <p>
+                  <input name="summonerName" type="text"></input>
+                </p>
+                {/* set this to lowercase in axios request */}
+              </div>
+              <p></p>
+              <button type="submit"> Import Summoner Info </button>
+              {/* button needs css to match the SummonerInfoIndex's Show more button */}
+            </form>
+          </p>
         </div>
-        <div>
-          Summoner Name: <input name="summonerName" type="text"></input>
-          {/* set this to lowercase in axios request */}
-        </div>
-        <button type="submit"> Import Summoner Info </button>
-      </form>
+      </div>
+      <p></p>
     </div>
   );
 }
