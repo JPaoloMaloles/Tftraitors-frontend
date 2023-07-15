@@ -74,7 +74,7 @@ export function Content() {
       setSummonerInfos([...summonerInfos, response.data]);
       console.log("Summoner ID is:", response.data.id, params.get("region"));
       console.log("PUUID is:", response.data.puuid);
-      handleImportMatchId(params.get("region"), response.data.puuid);
+      handleImportMatchId(params.get("region"), response.data.puuid, response.data.id);
       successCallback();
     });
 
@@ -106,13 +106,15 @@ export function Content() {
     //functions to do axios.get match_strings, then another two methods to make the posts
   };
 
-  const handleImportMatchId = (region, puuid) => {
+  const handleImportMatchId = (region, puuid, summonerInfo_id) => {
     var tftRegion;
     if (region === "na1") {
       tftRegion = "americas";
     }
     axios
-      .get(`http://localhost:3000/riot_second.json`, { params: { tftRegion: tftRegion, puuid: puuid } })
+      .get(`http://localhost:3000/riot_second.json`, {
+        params: { tftRegion: tftRegion, puuid: puuid, summonerInfo_id },
+      })
       .then((response) => {
         console.log("handleImportMatchId", response.data);
       });
