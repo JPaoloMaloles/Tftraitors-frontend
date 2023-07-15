@@ -4,7 +4,7 @@ import "./SummonerInfoIndex.css";
 export function SummonerInfoIndex(props) {
   return (
     <div id="SummonerInfoIndexContent">
-      <h1 style={{ color: "white" }}> SummonerInfoIndex</h1>
+      <h1 style={{ color: "white" }}>SummonerInfoIndex</h1>
       {[...props.summonerInfos].reverse().map((summonerInfo) => (
         <div key={summonerInfo.id}>
           {/* <div className="row"> */}

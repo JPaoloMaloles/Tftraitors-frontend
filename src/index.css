@@ -11,3 +11,8 @@ html {
   background-size: 1200px 1200px;
   /* background-repeat: "no-repeat" */
 }
+
+h1 {
+  color: #ffffff;
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em rgb(255, 255, 255)
+}
