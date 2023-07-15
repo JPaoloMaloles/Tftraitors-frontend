@@ -126,17 +126,19 @@ export function Content() {
     console.log("aaa", params["riot_match_ids"]);
     params["riot_match_ids"].forEach((riot_match_id) => {
       console.log("iteration", riot_match_id);
-      // handleImportMatches(params);
+      handleImportMatches(params["tft_region"], riot_match_id, params["summonerInfo_id"]);
     });
   };
 
-  // const handleImportMatches = (params) => {
-  //   axios.post(`http://localhost:3000/riot_third.json`, params).then((response) => {
-  //     console.log("handleImportMatches", response.data);
-  //     // need code to update, the matches accordion might automatically update, if not need to code for that manually
-  //     handleImportMatchSummonerPerformances(params);
-  //   });
-  // };
+  const handleImportMatches = (tft_region, riot_match_id, summonerInfo_id) => {
+    console.log("handleImportMatches", tft_region, riot_match_id, summonerInfo_id);
+    // axios.post(`http://localhost:3000/riot_third.json`, params).then((response) => {
+    //   console.log("handleImportMatches", response.data);
+    //   // need code to update, the matches accordion might automatically update, if not need to code for that manually
+
+    //   // handleImportMatchSummonerPerformances(params);
+    // });
+  };
 
   useEffect(handleSetSummonerInfos, []);
 
