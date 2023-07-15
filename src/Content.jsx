@@ -117,7 +117,12 @@ export function Content() {
       })
       .then((response) => {
         console.log("handleImportMatchId", response.data);
+        handleImportMatches(response.data);
       });
+  };
+
+  const handleImportMatches = (params) => {
+    console.log("handleImportMatches", params);
   };
 
   useEffect(handleSetSummonerInfos, []);
