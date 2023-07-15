@@ -117,13 +117,26 @@ export function Content() {
       })
       .then((response) => {
         console.log("handleImportMatchId", response.data);
-        handleImportMatches(response.data);
+        handleEachRiotMatchId(response.data);
       });
   };
 
-  const handleImportMatches = (params) => {
+  const handleEachRiotMatchId = (params) => {
     console.log("handleImportMatches", params);
+    console.log("aaa", params["riot_match_ids"]);
+    params["riot_match_ids"].forEach((riot_match_id) => {
+      console.log("iteration", riot_match_id);
+      // handleImportMatches(params);
+    });
   };
+
+  // const handleImportMatches = (params) => {
+  //   axios.post(`http://localhost:3000/riot_third.json`, params).then((response) => {
+  //     console.log("handleImportMatches", response.data);
+  //     // need code to update, the matches accordion might automatically update, if not need to code for that manually
+  //     handleImportMatchSummonerPerformances(params);
+  //   });
+  // };
 
   useEffect(handleSetSummonerInfos, []);
 
