@@ -12,35 +12,43 @@ export function SummonerInfoCreate(props) {
         <div className="card-body">
           <h5 className="card-title"> dsweb</h5>
 
-          <p className="card=text">
-            <form onSubmit={handleOnSubmit}>
-              <div>
-                puuid: <input name="puuid" type="text"></input>
-              </div>
-              <div>
-                tier: <input name="tier" type="text"></input>
-              </div>
-              <div>
-                rank: <input name="rank" type="text"></input>
-              </div>
-              <div>
-                league_points: <input name="league_points" type="text"></input>
-              </div>
-              <div>
-                riot_summoner_id: <input name="riot_summoner_id" type="text"></input>
-              </div>
-              <div>
-                summoner_name: <input name="summoner_name" type="text"></input>
-              </div>
-              <div>
-                wins: <input name="wins" type="text"></input>
-              </div>
-              <div>
-                losses: <input name="losses" type="text"></input>
-              </div>
-              <button type="submit">Create Summoner Info </button>
-            </form>
-          </p>
+          <form onSubmit={handleOnSubmit}>
+            <div>
+              puuid:
+              <p>
+                <input name="puuid" type="text"></input>
+              </p>
+              tier:
+              <p>
+                <input name="tier" type="text"></input>
+              </p>
+              rank:
+              <p>
+                <input name="rank" type="text"></input>
+              </p>
+              league_points:
+              <p>
+                <input name="league_points" type="text"></input>
+              </p>
+              riot_summoner_id:
+              <p>
+                <input name="riot_summoner_id" type="text"></input>
+              </p>
+              summoner_name:
+              <p>
+                <input name="summoner_name" type="text"></input>
+              </p>
+              wins:
+              <p>
+                <input name="wins" type="text"></input>
+              </p>
+              losses:
+              <p>
+                <input name="losses" type="text"></input>
+              </p>
+            </div>
+            <button type="submit">Create Summoner Info </button>
+          </form>
         </div>
       </div>
       <p></p>
