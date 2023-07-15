@@ -130,8 +130,8 @@ export function Content() {
     });
   };
 
-  const handleImportMatches = (tft_region, riot_match_id, summonerInfo_id) => {
-    console.log("handleImportMatches", tft_region, riot_match_id, summonerInfo_id);
+  const handleImportMatches = (tftRegion, riot_match_id, summonerInfo_id) => {
+    console.log("handleImportMatches", tftRegion, riot_match_id, summonerInfo_id);
     // axios.post(`http://localhost:3000/riot_third.json`, params).then((response) => {
     //   console.log("handleImportMatches", response.data);
     //   // need code to update, the matches accordion might automatically update, if not need to code for that manually
