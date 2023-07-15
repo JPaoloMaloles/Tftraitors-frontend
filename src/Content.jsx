@@ -72,7 +72,9 @@ export function Content() {
     axios.post(`http://localhost:3000/riot_first.json`, params).then((response) => {
       console.log("handleImportSummonerInfo", response.data);
       setSummonerInfos([...summonerInfos, response.data]);
-      console.log("Summoner ID is:", response.data.id);
+      console.log("Summoner ID is:", response.data.id, params.get("region"));
+      console.log("PUUID is:", response.data.puuid);
+      handleImportMatchId(params.get("region"), response.data.puuid);
       successCallback();
     });
 
@@ -102,6 +104,18 @@ export function Content() {
 
     // I will have to write code to update the frontend's info to match the backend, for this one it's [...summonerInfos, response.data]
     //functions to do axios.get match_strings, then another two methods to make the posts
+  };
+
+  const handleImportMatchId = (region, puuid) => {
+    var tftRegion;
+    if (region === "na1") {
+      tftRegion = "americas";
+    }
+    axios
+      .get(`http://localhost:3000/riot_second.json`, { params: { tftRegion: tftRegion, puuid: puuid } })
+      .then((response) => {
+        console.log("handleImportMatchId", response.data);
+      });
   };
 
   useEffect(handleSetSummonerInfos, []);
