@@ -73,6 +73,7 @@ export function Content() {
     axios.post(`http://localhost:3000/riot_first.json`, params).then((response) => {
       console.log("handleImportSummonerInfo", response.data);
       setSummonerInfos([...summonerInfos, response.data]);
+      console.log("Summoner ID is:", response.data.id);
       successCallback();
     });
 
