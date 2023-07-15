@@ -113,7 +113,9 @@ export function Content() {
       <Signup />
       <Login />
       <LogoutLink />
-      <CardFunction />
+      {/* put logoutlink in the headbar, doesnt need card */}
+      {/* <CardFunction />  */}
+      {/* only used to test card display */}
 
       <SummonerInfoCreate handleCreateSummonerInfo={handleCreateSummonerInfo} />
       <ImportSummonerInfo handleImportSummonerInfo={handleImportSummonerInfo} />

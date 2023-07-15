@@ -10,7 +10,7 @@ export function SummonerInfoCreate(props) {
       <h1 style={{ color: "white" }}> Create Summoner Info </h1>
       <div className="card">
         <div className="card-body">
-          <h5 className="card-title"> dsweb</h5>
+          <h5 className="card-title"></h5>
 
           <form onSubmit={handleOnSubmit}>
             <div>

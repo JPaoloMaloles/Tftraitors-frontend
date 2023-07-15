@@ -24,26 +24,45 @@ export function Signup() {
   return (
     <div id="signup">
       <h1 style={{ color: "white" }}>Signup</h1>
-      <ul>
-        {errors.map((error) => (
-          <li key={error}>{error}</li>
-        ))}
-      </ul>
-      <form onSubmit={handleSubmit}>
-        <div>
-          Name: <input name="name" type="text" />
+      <div className="card">
+        <div className="card-body">
+          <h5 className="card-title"></h5>
+
+          <ul>
+            {errors.map((error) => (
+              <li key={error}>{error}</li>
+            ))}
+          </ul>
+          <form onSubmit={handleSubmit}>
+            <div>
+              Name:
+              <p>
+                <input name="name" type="text" />
+              </p>
+            </div>
+            <div>
+              Email:
+              <p>
+                <input name="email" type="email" />
+              </p>
+            </div>
+            <div>
+              Password:
+              <p>
+                <input name="password" type="password" />
+              </p>
+            </div>
+            <div>
+              Password confirmation:
+              <p>
+                <input name="password_confirmation" type="password" />
+              </p>
+            </div>
+            <button type="submit">Signup</button>
+          </form>
         </div>
-        <div>
-          Email: <input name="email" type="email" />
-        </div>
-        <div>
-          Password: <input name="password" type="password" />
-        </div>
-        <div>
-          Password confirmation: <input name="password_confirmation" type="password" />
-        </div>
-        <button type="submit">Signup</button>
-      </form>
+      </div>
+      <p></p>
     </div>
   );
 }
