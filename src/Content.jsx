@@ -8,7 +8,6 @@ import { SummonerInfoCreate } from "./SummonerInfoCreate";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
-import { CardFunction } from "./Card";
 import { ImportSummonerInfo } from "./ImportSummonerInfo";
 
 export function Content() {
