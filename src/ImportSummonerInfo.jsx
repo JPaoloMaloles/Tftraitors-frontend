@@ -1,5 +1,7 @@
 export function ImportSummonerInfo(props) {
   var updateState;
+  var updateColor;
+
   const handleOnSubmit = (event) => {
     event.preventDefault();
     console.log("THIS IS params", event.target.elements.region.value);
@@ -15,7 +17,6 @@ export function ImportSummonerInfo(props) {
     // use params.summoner_name and params.region_id in axios request
   };
 
-  var updateColor;
   if (props.isImportInProgress === true) {
     console.log("aaaa");
     updateState = "Importing...";
