@@ -43,6 +43,7 @@ export function ImportSummonerInfo(props) {
                 pattern="BR1|EUN1|EUW1|JP1|KR|LA1|LA2|NA1|OC1|PH2|RU|SG2|TH2|TR1|TW2|VN2"
                 title="Must be BR1, EUN1, EUW1, JP1, KR, LA1, LA2, NA1, OC1, PH2, RU, SG2, TH2, TR1, TW2, or
     VN2, delete entry to have dropdown appear"
+                defaultValue="NA1"
               />
               <datalist id="region_abbv">
                 <option value="BR1" />
@@ -52,7 +53,7 @@ export function ImportSummonerInfo(props) {
                 <option value="KR" />
                 <option value="LA1" />
                 <option value="LA2" />
-                <option value="NA1" selected />
+                <option value="NA1" />
                 <option value="OC1" />
                 <option value="PH2" />
                 <option value="RU" />
