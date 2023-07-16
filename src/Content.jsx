@@ -127,10 +127,16 @@ export function Content() {
         },
       })
       .then((response) => {
-        console.log(`Parcipant Data for Match #${riot_match_id}, match_id: ${match_id}`, response.data, puuid);
+        console.log(
+          `Parcipant Data for Match #${riot_match_id}, match_id: ${match_id}, summonerInfo_id:${summonerInfo_id}`,
+          response
+        );
         // Use update syntax to update the affected Matches and summonerInfos, use the id's to correlate them
+        // setTimeout(function () {
+        //   console.log("hello3");
+        // }, 2000);
         // axios.get(`http://localhost:3000/summoner_infos/${summonerInfo_id}.json`).then((response) => {
-        //   console.log("handleSetSummonerInfos", response.data);
+        //   console.log("REUPDATING", response.data);
         //   setSummonerInfos(
         //     summonerInfos.map((summonerInfo) => {
         //       if (summonerInfo.id === response.data.id) {
@@ -142,6 +148,22 @@ export function Content() {
         //   );
         // });
       });
+    handleUpdateImport(summonerInfo_id);
+  };
+
+  const handleUpdateImport = (id) => {
+    axios.get(`http://localhost:3000/summoner_infos/${id}.json`).then((response) => {
+      console.log("REUPDATING", response.data);
+      setSummonerInfos(
+        summonerInfos.map((summonerInfo) => {
+          if (summonerInfo.id === response.data.id) {
+            return response.data;
+          } else {
+            return summonerInfo;
+          }
+        })
+      );
+    });
   };
 
   useEffect(handleSetSummonerInfos, []);
