@@ -154,6 +154,7 @@ export function Content() {
       })
       .then((response) => {
         console.log("ZZZZZZZZ", response.data);
+        // Use update syntax to update the affected Matches and summonerInfos, use the id's to correlate them
       });
   };
 
