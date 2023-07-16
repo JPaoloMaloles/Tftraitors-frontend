@@ -143,9 +143,18 @@ export function Content() {
 
   const handleImportMatchSummonerPerformances = (tftRegion, riot_match_id, summonerInfo_id, match_id) => {
     console.log("handleImportMatchSummonerPerformances", tftRegion, riot_match_id, summonerInfo_id, match_id);
-    axios.post(`http://localhost:3000/riot_fourth.json`).then((response) => {
-      console.log("ZZZZZZZZ", response.data);
-    });
+    axios
+      .post(`http://localhost:3000/riot_fourth.json`, {
+        params: {
+          tftRegion: tftRegion,
+          riot_match_id: riot_match_id,
+          summonerInfo_id: summonerInfo_id,
+          match_id: match_id,
+        },
+      })
+      .then((response) => {
+        console.log("ZZZZZZZZ", response.data);
+      });
   };
 
   useEffect(handleSetSummonerInfos, []);
