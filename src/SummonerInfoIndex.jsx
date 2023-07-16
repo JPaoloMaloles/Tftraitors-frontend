@@ -65,10 +65,12 @@ export function SummonerInfoIndex(props) {
                               <Accordion.Header> Match #{index + 1} </Accordion.Header>
                               <Accordion.Body>
                                 <div style={{ fontSize: "13px" }}>
-                                  <div className="row" style={{ backgroundColor: "#808080" }}>
+                                  <div className="row" style={{ backgroundColor: "#E5F3FD" }}>
                                     <div className="col-sm-12">
                                       <b>puuid:</b> {match_summoner_performance.puuid}{" "}
                                     </div>
+                                  </div>
+                                  <div className="row" style={{ backgroundColor: "#F5FBFF" }}>
                                     <div className="col-sm-2">
                                       <b>match id:</b> <p>{match_summoner_performance.match_id}</p>{" "}
                                     </div>
@@ -78,8 +80,18 @@ export function SummonerInfoIndex(props) {
                                     <div className="col-sm-2">
                                       <b>riot match id:</b> <p>{match_summoner_performance.riot_match_id}</p>{" "}
                                     </div>
+                                    <div className="col-sm-2">
+                                      <b>companion id:</b> <p>{match_summoner_performance.companion_id}</p>{" "}
+                                    </div>
+                                    <div className="col-sm-2">
+                                      <b>time eliminated:</b>{" "}
+                                      <p>
+                                        {parseInt(match_summoner_performance.time_eliminated / 60)}:
+                                        {parseInt(((match_summoner_performance.time_eliminated / 60) % 1) * 100)}
+                                      </p>{" "}
+                                    </div>
                                   </div>
-                                  <div className="row">
+                                  <div className="row" style={{ backgroundColor: "#F5FBFF" }}>
                                     <div className="col-sm-2">
                                       <b>gold left:</b> <p>{match_summoner_performance.gold_left}</p>{" "}
                                     </div>
@@ -92,29 +104,16 @@ export function SummonerInfoIndex(props) {
                                     <div className="col-sm-2">
                                       <b>players eliminated:</b> <p>{match_summoner_performance.players_eliminated}</p>{" "}
                                     </div>
-                                  </div>
-                                  <div className="row">
-                                    <div className="col-sm-2">
-                                      <b>time eliminated:</b>{" "}
-                                      <p>
-                                        {parseInt(match_summoner_performance.time_eliminated / 60)}:
-                                        {parseInt(((match_summoner_performance.time_eliminated / 60) % 1) * 100)}
-                                      </p>{" "}
-                                    </div>
                                     <div className="col-sm-2">
                                       <b>player damage:</b> <p>{match_summoner_performance.total_damage_to_players}</p>{" "}
                                     </div>
-                                    <div className="col-sm-2">
-                                      <b>first augment:</b> <p>{match_summoner_performance.first_augment}</p>{" "}
-                                    </div>
-                                    <div className="col-sm-2">
-                                      <b>second augment:</b> <p>{match_summoner_performance.second_augment}</p>{" "}
-                                    </div>
-                                    <div>
-                                      <b>third augment:</b> <p>{match_summoner_performance.third_augment}</p>{" "}
-                                    </div>
-                                    <div>
-                                      <b>companion id:</b> <p>{match_summoner_performance.companion_id}</p>{" "}
+                                  </div>
+                                  <div className="row" style={{ backgroundColor: "#F5FBFF" }}>
+                                    <div className="col-sm-5">
+                                      <b>augments:</b>
+                                      <div>{match_summoner_performance.first_augment}</div>
+                                      <div>{match_summoner_performance.second_augment}</div>
+                                      <div>{match_summoner_performance.third_augment}</div>
                                     </div>
                                   </div>
                                 </div>
