@@ -37,7 +37,31 @@ export function ImportSummonerInfo(props) {
           <form onSubmit={handleOnSubmit}>
             <div>Region:</div>
             <p>
-              <input name="region" type="text"></input>
+              <input
+                list="region_abbv"
+                name="region"
+                pattern="BR1|EUN1|EUW1|JP1|KR|LA1|LA2|NA1|OC1|PH2|RU|SG2|TH2|TR1|TW2|VN2"
+                title="Must be BR1, EUN1, EUW1, JP1, KR, LA1, LA2, NA1, OC1, PH2, RU, SG2, TH2, TR1, TW2, or
+    VN2, delete entry to have dropdown appear"
+              />
+              <datalist id="region_abbv">
+                <option value="BR1" />
+                <option value="EUN1" />
+                <option value="EUW1" />
+                <option value="JP1" />
+                <option value="KR" />
+                <option value="LA1" />
+                <option value="LA2" />
+                <option value="NA1" selected />
+                <option value="OC1" />
+                <option value="PH2" />
+                <option value="RU" />
+                <option value="SG2" />
+                <option value="TH2" />
+                <option value="TR1" />
+                <option value="TW2" />
+                <option value="VN2" />
+              </datalist>
             </p>
             <div>
               Summoner Name:

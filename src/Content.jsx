@@ -88,13 +88,31 @@ export function Content() {
   };
 
   const handleImportMatchId = (region, puuid, summonerInfo_id) => {
-    var tftRegion;
-    if (region === "na1") {
-      tftRegion = "americas";
-    }
+    var tftRegion = {
+      BR1: "americas",
+      EUN1: "europe",
+      EUW1: "europe",
+      JP1: "asia",
+      KR: "asia",
+      LA1: "americas",
+      LA2: "americas",
+      NA1: "americas",
+      OC1: "sea",
+      PH2: "sea",
+      RU: "europe",
+      SG2: "sea",
+      TH2: "sea",
+      TR1: "europe",
+      TW2: "sea",
+      VN2: "sea",
+    };
+    console.log("$$$$$$$$$$$$$$$$", tftRegion["BR1"]);
+    // if (region === "na1") {
+    //   tftRegion = "americas";
+    // }
     axios
       .get(`http://localhost:3000/riot_second.json`, {
-        params: { tftRegion: tftRegion, puuid: puuid, summonerInfo_id },
+        params: { tftRegion: tftRegion[region], puuid: puuid, summonerInfo_id },
       })
       .then((response) => {
         console.log("handleImportMatchId", response.data);
