@@ -7,6 +7,7 @@ Tftraitors is made using a React frontend and Ruby on Rails backend.
 <h1> Setup:</h1>
 Use of TFTraitors currently requires a riot api key as an environment variable. The following is how to do so using the zsh shell.
 
+
 Open your environment variables in a text editor using the following:
 <pre><code> code ~/.zshrc
 </code></pre>
