@@ -71,7 +71,7 @@ export function Content() {
 
     axios.post(`http://localhost:3000/riot_first.json`, params).then((response) => {
       console.log("handleImportSummonerInfo", response.data);
-      setSummonerInfos([...summonerInfos, response.data]);
+      // setSummonerInfos([...summonerInfos, response.data]);
       console.log("Summoner ID is:", response.data.id, params.get("region"));
       console.log("PUUID is:", response.data.puuid);
       handleImportMatchId(params.get("region"), response.data.puuid, response.data.id);
@@ -91,6 +91,14 @@ export function Content() {
       .then((response) => {
         console.log("handleImportMatchId", response.data);
         handleEachRiotMatchId(response.data, puuid);
+      })
+      .then(() => {
+        setTimeout(function () {
+          axios.get(`http://localhost:3000/summoner_infos/${summonerInfo_id}.json`).then((response) => {
+            console.log("====================================================", response.data);
+            setSummonerInfos([...summonerInfos, response.data]);
+          });
+        }, 10000);
       });
   };
 
@@ -152,18 +160,19 @@ export function Content() {
   };
 
   const handleUpdateImport = (id) => {
-    axios.get(`http://localhost:3000/summoner_infos/${id}.json`).then((response) => {
-      console.log("REUPDATING", response.data);
-      setSummonerInfos(
-        summonerInfos.map((summonerInfo) => {
-          if (summonerInfo.id === response.data.id) {
-            return response.data;
-          } else {
-            return summonerInfo;
-          }
-        })
-      );
-    });
+    console.log("handleUpdateImport", id);
+    // axios.get(`http://localhost:3000/summoner_infos/${id}.json`).then((response) => {
+    //   console.log("REUPDATING", response.data);
+    //   setSummonerInfos(
+    //     summonerInfos.map((summonerInfo) => {
+    //       if (summonerInfo.id === response.data.id) {
+    //         return response.data;
+    //       } else {
+    //         return summonerInfo;
+    //       }
+    //     })
+    //   );
+    // });
   };
 
   useEffect(handleSetSummonerInfos, []);
