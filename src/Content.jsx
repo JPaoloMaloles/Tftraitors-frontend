@@ -77,33 +77,6 @@ export function Content() {
       handleImportMatchId(params.get("region"), response.data.puuid, response.data.id);
       successCallback();
     });
-
-    // // +++++++++++++++++++++++++ Functional for riot_first, fixed params ++++++++++++++++++
-    // axios.get(`http://localhost:3000/riot_first.json`).then((response) => {
-    //   console.log("handleImportSummonerInfo", response.data);
-    //   setSummonerInfos([...summonerInfos, response.data]);
-    //   successCallback();
-    // });
-    // // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-    // =====================================================================================================================================================
-    //#-----------------------------------------Blocked by cors policy, should use backend instead
-    // axios
-    //   .get(
-    //     `https://${region}.api.riotgames.com/tft/summoner/v1/summoners/by-name/${summonerName}?api_key=${
-    //       import.meta.env.VITE_RIOT_KEY
-    //     }`
-    //   )
-    //   .then((response) => {
-    //     console.log("handleImportSummonerInfo", response.data);
-    // //    the response should be a json with the new information for that summoner (this will have to be iterated over with map for matches, just like we did on request.rb). A theoretical handleImportMatchIds shoudl be called accepting what the request needs, and within there the handleImportMatch and handleImportMatchSummonerPerformance.
-    //   });
-    // =====================================================================================================================================================
-
-    // need to make web request to my backend, which will then perform the same action from the backend. Once info is retrieved, need to update the frontend so that it can rerender with the new data.
-
-    // I will have to write code to update the frontend's info to match the backend, for this one it's [...summonerInfos, response.data]
-    //functions to do axios.get match_strings, then another two methods to make the posts
   };
 
   const handleImportMatchId = (region, puuid, summonerInfo_id) => {
