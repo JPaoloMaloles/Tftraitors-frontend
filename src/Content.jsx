@@ -9,6 +9,7 @@ import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
 import { ImportSummonerInfo } from "./ImportSummonerInfo";
+import { Routes, Route } from "react-router-dom";
 
 export function Content() {
   const [summonerInfos, setSummonerInfos] = useState([]);
@@ -187,15 +188,42 @@ export function Content() {
 
   return (
     <div className="container">
-      <Signup />
-      <Login />
-      <LogoutLink />
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<LogoutLink />} />
+        <Route
+          path="/manual_create"
+          element={<SummonerInfoCreate handleCreateSummonerInfo={handleCreateSummonerInfo} />}
+        />
+        <Route
+          path="/"
+          element={
+            <div>
+              <ImportSummonerInfo
+                handleImportSummonerInfo={handleImportSummonerInfo}
+                isImportInProgress={isImportInProgress}
+              />
+              <SummonerInfoIndex
+                summonerInfos={summonerInfos}
+                handleSetIsSummonerInfoVisible={handleSetIsSummonerInfoVisible}
+              />
+              <Modal show={isSummonerInfoVisible} onClose={onClose}>
+                <SummonerInfoShow
+                  currentSummonerInfo={currentSummonerInfo}
+                  handleUpdateSummonerInfo={handleUpdateSummonerInfo}
+                  handleDestroySummonerInfo={handleDestroySummonerInfo}
+                />
+              </Modal>
+            </div>
+          }
+        />
+      </Routes>
       {/* put logoutlink in the headbar, doesnt need card */}
       {/* <CardFunction />  */}
       {/* only used to test card display */}
 
-      <SummonerInfoCreate handleCreateSummonerInfo={handleCreateSummonerInfo} />
-      <ImportSummonerInfo handleImportSummonerInfo={handleImportSummonerInfo} isImportInProgress={isImportInProgress} />
+      {/* <ImportSummonerInfo handleImportSummonerInfo={handleImportSummonerInfo} isImportInProgress={isImportInProgress} />
       <SummonerInfoIndex
         summonerInfos={summonerInfos}
         handleSetIsSummonerInfoVisible={handleSetIsSummonerInfoVisible}
@@ -206,7 +234,7 @@ export function Content() {
           handleUpdateSummonerInfo={handleUpdateSummonerInfo}
           handleDestroySummonerInfo={handleDestroySummonerInfo}
         />
-      </Modal>
+      </Modal> */}
     </div>
   );
 }
