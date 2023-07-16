@@ -153,7 +153,7 @@ export function Content() {
         },
       })
       .then((response) => {
-        console.log("ZZZZZZZZ", response.data);
+        console.log(`Parcipant Data for Match #${riot_match_id}, match_id: ${match_id}`, response.data);
         // Use update syntax to update the affected Matches and summonerInfos, use the id's to correlate them
       });
   };
