@@ -1,4 +1,5 @@
 export function ImportSummonerInfo(props) {
+  var updateState;
   const handleOnSubmit = (event) => {
     event.preventDefault();
     console.log("THIS IS params", event.target.elements.region.value);
@@ -13,6 +14,17 @@ export function ImportSummonerInfo(props) {
     );
     // use params.summoner_name and params.region_id in axios request
   };
+
+  var updateColor;
+  if (props.isImportInProgress === true) {
+    console.log("aaaa");
+    updateState = "Importing...";
+    updateColor = "red";
+  } else if (props.isImportInProgress === false) {
+    console.log("bbbb");
+    updateState = "Importing... Done";
+    updateColor = "green";
+  }
 
   return (
     <div>
@@ -34,7 +46,8 @@ export function ImportSummonerInfo(props) {
               <input name="summonerName" type="text"></input>
             </p>
             <p></p>
-            <button type="submit"> Import Summoner Info </button>
+            <button type="submit"> Import Summoner Info </button>{" "}
+            <div style={{ color: updateColor }}> {updateState}</div>
             {/* button needs css to match the SummonerInfoIndex's Show more button */}
           </form>
         </div>

@@ -14,6 +14,11 @@ export function Content() {
   const [summonerInfos, setSummonerInfos] = useState([]);
   const [isSummonerInfoVisible, setIsSummonerInfoVisible] = useState(false);
   const [currentSummonerInfo, setCurrentSummonerInfo] = useState({});
+  const [isImportInProgress, setIsImportInProgress] = useState(null);
+
+  const handleSetIsImportInProgress = (trueOrFalse) => {
+    setIsImportInProgress(trueOrFalse);
+  };
 
   const handleSetSummonerInfos = () => {
     axios.get(`http://localhost:3000/summoner_infos.json`).then((response) => {
@@ -72,8 +77,10 @@ export function Content() {
     axios.post(`http://localhost:3000/riot_first.json`, params).then((response) => {
       console.log("handleImportSummonerInfo", response.data);
       // setSummonerInfos([...summonerInfos, response.data]);
+      handleSetIsImportInProgress(true);
       console.log("Summoner ID is:", response.data.id, params.get("region"));
       console.log("PUUID is:", response.data.puuid);
+
       handleImportMatchId(params.get("region"), response.data.puuid, response.data.id);
       successCallback();
     });
@@ -97,6 +104,7 @@ export function Content() {
           axios.get(`http://localhost:3000/summoner_infos/${summonerInfo_id}.json`).then((response) => {
             console.log("====================================================", response.data);
             setSummonerInfos([...summonerInfos, response.data]);
+            handleSetIsImportInProgress(false);
           });
         }, 10000);
       });
@@ -187,7 +195,7 @@ export function Content() {
       {/* only used to test card display */}
 
       <SummonerInfoCreate handleCreateSummonerInfo={handleCreateSummonerInfo} />
-      <ImportSummonerInfo handleImportSummonerInfo={handleImportSummonerInfo} />
+      <ImportSummonerInfo handleImportSummonerInfo={handleImportSummonerInfo} isImportInProgress={isImportInProgress} />
       <SummonerInfoIndex
         summonerInfos={summonerInfos}
         handleSetIsSummonerInfoVisible={handleSetIsSummonerInfoVisible}
