@@ -1,7 +1,9 @@
 export function Footer() {
   return (
-    <footer>
-      <p>Copyright 2022</p>
-    </footer>
+    <div style={{ color: "white" }}>
+      <footer>
+        <p>Copyright 2022</p>
+      </footer>
+    </div>
   );
 }
