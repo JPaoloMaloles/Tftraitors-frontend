@@ -12,7 +12,7 @@ export function Header() {
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="/" style={{ backgroundColor: "black" }}>
+        <a className="navbar-brand" href="/">
           <div className="container" style={{ color: "#FC4C02" }}>
             TFTraitor
           </div>
