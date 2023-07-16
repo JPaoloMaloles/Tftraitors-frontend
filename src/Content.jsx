@@ -90,19 +90,19 @@ export function Content() {
       })
       .then((response) => {
         console.log("handleImportMatchId", response.data);
-        handleEachRiotMatchId(response.data);
+        handleEachRiotMatchId(response.data, puuid);
       });
   };
 
-  const handleEachRiotMatchId = (params) => {
+  const handleEachRiotMatchId = (params, puuid) => {
     console.log("handleImportMatches", params);
     params["riot_match_ids"].forEach((riot_match_id) => {
       console.log("iteration", params["tftRegion"], riot_match_id, params["summonerInfo_id"]);
-      handleImportMatches(params["tftRegion"], riot_match_id, params["summonerInfo_id"]);
+      handleImportMatches(params["tftRegion"], riot_match_id, params["summonerInfo_id"], puuid);
     });
   };
 
-  const handleImportMatches = (tftRegion, riot_match_id, summonerInfo_id) => {
+  const handleImportMatches = (tftRegion, riot_match_id, summonerInfo_id, puuid) => {
     console.log("handleImportMatchesBEFORE", `@${tftRegion}@`, `@${riot_match_id}@`, `@${summonerInfo_id}@`);
     axios
       .post(`http://localhost:3000/riot_third.json`, {
@@ -110,11 +110,11 @@ export function Content() {
       })
       .then((response) => {
         console.log("handleImportMatchesAFTER", response.data);
-        handleImportMatchSummonerPerformances(tftRegion, riot_match_id, summonerInfo_id, response.data.id);
+        handleImportMatchSummonerPerformances(tftRegion, riot_match_id, summonerInfo_id, response.data.id, puuid);
       });
   };
 
-  const handleImportMatchSummonerPerformances = (tftRegion, riot_match_id, summonerInfo_id, match_id) => {
+  const handleImportMatchSummonerPerformances = (tftRegion, riot_match_id, summonerInfo_id, match_id, puuid) => {
     console.log("handleImportMatchSummonerPerformances", tftRegion, riot_match_id, summonerInfo_id, match_id);
     axios
       .post(`http://localhost:3000/riot_fourth.json`, {
@@ -126,8 +126,20 @@ export function Content() {
         },
       })
       .then((response) => {
-        console.log(`Parcipant Data for Match #${riot_match_id}, match_id: ${match_id}`, response.data);
+        console.log(`Parcipant Data for Match #${riot_match_id}, match_id: ${match_id}`, response.data, puuid);
         // Use update syntax to update the affected Matches and summonerInfos, use the id's to correlate them
+        // axios.get(`http://localhost:3000/summoner_infos/${summonerInfo_id}.json`).then((response) => {
+        //   console.log("handleSetSummonerInfos", response.data);
+        //   setSummonerInfos(
+        //     summonerInfos.map((summonerInfo) => {
+        //       if (summonerInfo.id === response.data.id) {
+        //         return response.data;
+        //       } else {
+        //         return summonerInfo;
+        //       }
+        //     })
+        //   );
+        // });
       });
   };
 
