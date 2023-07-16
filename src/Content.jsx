@@ -70,7 +70,7 @@ export function Content() {
     });
   };
 
-  const handleImportSummonerInfo = (region, summonerName, params, successCallback) => {
+  const handleImportSummonerInfo = (region, summonerName, params) => {
     console.log("AAAAAAAAAAAAAAAAAAA", region, summonerName);
     console.log("BBBBBBBBBBBBBBBBBBB", params.get("region"));
     console.log("CCCCCCCCCCCCCCCCCCC", params.get("summonerName"));
@@ -83,7 +83,7 @@ export function Content() {
       console.log("PUUID is:", response.data.puuid);
 
       handleImportMatchId(params.get("region"), response.data.puuid, response.data.id);
-      successCallback();
+      // successCallback();
     });
   };
 

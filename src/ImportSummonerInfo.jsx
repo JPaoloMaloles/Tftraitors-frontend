@@ -11,9 +11,7 @@ export function ImportSummonerInfo(props) {
     // const region = event.target.elements.region.value;
     // const summonerName = event.target.elements.summonerName.value;
     // console.log(region, summonerName);
-    props.handleImportSummonerInfo(event.target.region.value, event.target.summonerName.value, params, () =>
-      event.target.reset()
-    );
+    props.handleImportSummonerInfo(event.target.region.value, event.target.summonerName.value, params);
     // use params.summoner_name and params.region_id in axios request
   };
 
