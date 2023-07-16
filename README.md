@@ -22,5 +22,5 @@ Environment variables are only loaded up when the terminal app is first booted u
   <li> User authorization and authentication </li>
   <li> Imports of a player's 20 most recent matches from any of Riot's 16 servers using asynchronous web requests </li>
   <li> Routes using react-router-dom </li>
-  <li> A beautiful display using a combination of javascript and bootstrap</li>
+  <li> A beautiful display made with javascript and bootstrap</li>
 </ul>
