@@ -9,8 +9,17 @@ export function LogoutLink() {
   };
 
   return (
-    <a href="#" onClick={handleClick}>
-      Logout
-    </a>
+    <div>
+      <p></p>
+      <div className="card">
+        <div className="card-body">
+          <h5 className="card-title" style={{ textAlign: "center" }}>
+            <a href="#" onClick={handleClick}>
+              Logout
+            </a>
+          </h5>
+        </div>
+      </div>
+    </div>
   );
 }
