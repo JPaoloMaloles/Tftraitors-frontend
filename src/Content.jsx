@@ -115,7 +115,7 @@ export function Content() {
   };
 
   const handleImportMatchSummonerPerformances = (tftRegion, riot_match_id, summonerInfo_id, match_id, puuid) => {
-    console.log("handleImportMatchSummonerPerformances", tftRegion, riot_match_id, summonerInfo_id, match_id);
+    console.log("handleImportMatchSummonerPerformances", tftRegion, riot_match_id, summonerInfo_id, match_id, puuid);
     axios
       .post(`http://localhost:3000/riot_fourth.json`, {
         params: {
@@ -123,6 +123,7 @@ export function Content() {
           riot_match_id: riot_match_id,
           summonerInfo_id: summonerInfo_id,
           match_id: match_id,
+          puuid: puuid,
         },
       })
       .then((response) => {
