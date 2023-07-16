@@ -126,18 +126,22 @@ export function Content() {
     console.log("aaa", params["riot_match_ids"]);
     params["riot_match_ids"].forEach((riot_match_id) => {
       console.log("iteration", riot_match_id);
-      handleImportMatches(params["tft_region"], riot_match_id, params["summonerInfo_id"]);
+      handleImportMatches(params["tftRegion"], riot_match_id, params["summonerInfo_id"]);
     });
   };
 
   const handleImportMatches = (tftRegion, riot_match_id, summonerInfo_id) => {
-    console.log("handleImportMatches", tftRegion, riot_match_id, summonerInfo_id);
-    // axios.post(`http://localhost:3000/riot_third.json`, params).then((response) => {
-    //   console.log("handleImportMatches", response.data);
-    //   // need code to update, the matches accordion might automatically update, if not need to code for that manually
+    console.log("handleImportMatchesBEFORE", tftRegion, riot_match_id, summonerInfo_id);
+    axios
+      .post(`http://localhost:3000/riot_third.json`, {
+        params: { tftRegion: tftRegion, riot_match_id: riot_match_id, summonerInfo_id: summonerInfo_id },
+      })
+      .then((response) => {
+        console.log("handleImportMatchesAFTER", response.data);
+        // need code to update, the matches accordion might automatically update, if not need to code for that manually
 
-    //   // handleImportMatchSummonerPerformances(params);
-    // });
+        // handleImportMatchSummonerPerformances(params);
+      });
   };
 
   useEffect(handleSetSummonerInfos, []);
