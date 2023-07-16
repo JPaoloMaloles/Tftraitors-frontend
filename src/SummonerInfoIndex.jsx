@@ -64,24 +64,52 @@ export function SummonerInfoIndex(props) {
                             <Accordion.Item eventKey={index}>
                               <Accordion.Header> Match #{index + 1} </Accordion.Header>
                               <Accordion.Body>
-                                <div style={{ color: "red", fontSize: "13px" }}>
-                                  <div> match id: {match_summoner_performance.match_id} </div>
-                                  <div> summoner_info_id: {match_summoner_performance.summoner_info_id} </div>
-                                  <div> riot_match_id: {match_summoner_performance.riot_match_id} </div>
-                                  <div> puuid: {match_summoner_performance.puuid} </div>
-                                  <div> gold_left: {match_summoner_performance.gold_left} </div>
-                                  <div> last_round: {match_summoner_performance.last_round} </div>
-                                  <div> level_placement: {match_summoner_performance.level_placement} </div>
-                                  <div> players_eliminated: {match_summoner_performance.players_eliminated} </div>
-                                  <div> time_eliminated: {match_summoner_performance.time_eliminated} </div>
-                                  <div>
-                                    {" "}
-                                    total_damage_to_players: {match_summoner_performance.total_damage_to_players}{" "}
+                                <div style={{ fontSize: "13px" }}>
+                                  <div className="row">
+                                    <div>
+                                      <b>match id:</b> <p>{match_summoner_performance.match_id}</p>{" "}
+                                    </div>
+                                    <div>
+                                      <b>summoner_info_id:</b> <p>{match_summoner_performance.summoner_info_id}</p>{" "}
+                                    </div>
+                                    <div>
+                                      <b>riot_match_id:</b> <p>{match_summoner_performance.riot_match_id}</p>{" "}
+                                    </div>
+                                    <div>
+                                      <b>puuid:</b> <p>{match_summoner_performance.puuid}</p>{" "}
+                                    </div>
+                                    <div>
+                                      <b>gold_left:</b> <p>{match_summoner_performance.gold_left}</p>{" "}
+                                    </div>
+                                    <div>
+                                      <b>last_round:</b> <p>{match_summoner_performance.last_round}</p>{" "}
+                                    </div>
+                                    <div>
+                                      <b>level_placement:</b> <p>{match_summoner_performance.level_placement}</p>{" "}
+                                    </div>
+                                    <div>
+                                      <b>players_eliminated:</b> <p>{match_summoner_performance.players_eliminated}</p>{" "}
+                                    </div>
+                                    <div>
+                                      <b>time_eliminated:</b> <p>{match_summoner_performance.time_eliminated}</p>{" "}
+                                    </div>
+                                    <div>
+                                      <b>total_damage_to_players:</b>{" "}
+                                      <p>{match_summoner_performance.total_damage_to_players}</p>{" "}
+                                    </div>
+                                    <div>
+                                      <b>first_augment:</b> <p>{match_summoner_performance.first_augment}</p>{" "}
+                                    </div>
+                                    <div>
+                                      <b>second_augment:</b> <p>{match_summoner_performance.second_augment}</p>{" "}
+                                    </div>
+                                    <div>
+                                      <b>third_augment:</b> <p>{match_summoner_performance.third_augment}</p>{" "}
+                                    </div>
+                                    <div>
+                                      <b>companion_id:</b> <p>{match_summoner_performance.companion_id}</p>{" "}
+                                    </div>
                                   </div>
-                                  <div> first_augment: {match_summoner_performance.first_augment} </div>
-                                  <div> second_augment: {match_summoner_performance.second_augment} </div>
-                                  <div> third_augment: {match_summoner_performance.third_augment} </div>
-                                  <div> companion_id: {match_summoner_performance.companion_id} </div>
                                 </div>
                               </Accordion.Body>
                             </Accordion.Item>
