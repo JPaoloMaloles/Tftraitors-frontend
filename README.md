@@ -4,6 +4,7 @@ Tftraitors is project to create a Teamfight Tactics (tft) datalytics site that c
 Tftraitors is made using a React frontend and Ruby on Rails backend.
 
 Use of TFTraitors currently requires a riot api key as an environment variable. The following is how to do so using the zsh shell.
+
 Open your environment variables in a text editor using the following:
 <pre><code> code ~/.zshrc
 </code></pre>
