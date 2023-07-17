@@ -237,22 +237,6 @@ export function Content() {
           }
         />
       </Routes>
-      {/* put logoutlink in the headbar, doesnt need card */}
-      {/* <CardFunction />  */}
-      {/* only used to test card display */}
-
-      {/* <ImportSummonerInfo handleImportSummonerInfo={handleImportSummonerInfo} isImportInProgress={isImportInProgress} />
-      <SummonerInfoIndex
-        summonerInfos={summonerInfos}
-        handleSetIsSummonerInfoVisible={handleSetIsSummonerInfoVisible}
-      />
-      <Modal show={isSummonerInfoVisible} onClose={onClose}>
-        <SummonerInfoShow
-          currentSummonerInfo={currentSummonerInfo}
-          handleUpdateSummonerInfo={handleUpdateSummonerInfo}
-          handleDestroySummonerInfo={handleDestroySummonerInfo}
-        />
-      </Modal> */}
     </div>
   );
 }
