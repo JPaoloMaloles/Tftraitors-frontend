@@ -1,4 +1,3 @@
-import Accordion from "react-bootstrap/Accordion";
 import "./SummonerInfoIndex.css";
 import { MatchSummonerPerformance } from "./MatchSummonerPerformanceIndex";
 
