@@ -72,7 +72,6 @@ export function SummonerInfoShow(props) {
             <button type="input" onClick={handleOnClick}>
               Destroy Summoner Info
             </button>
-            <b>{props.currentSummonerInfo.tier}</b>
           </p>
         </div>
       </div>
