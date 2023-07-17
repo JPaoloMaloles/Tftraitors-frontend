@@ -1,4 +1,5 @@
 import Accordion from "react-bootstrap/Accordion";
+import { MatchShow } from "./MatchShow";
 
 export function MatchSummonerPerformance(props) {
   return (
@@ -67,6 +68,7 @@ export function MatchSummonerPerformance(props) {
                       </div>
                     </div>
                   </div>
+                  <MatchShow summonerInfo={props.summonerInfo} MatchSummonerPerformanceIndex={index} />
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
