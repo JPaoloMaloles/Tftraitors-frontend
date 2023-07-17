@@ -99,7 +99,10 @@ export function SummonerInfoIndex(props) {
                                       <b>last round:</b> <p>{match_summoner_performance.last_round}</p>{" "}
                                     </div>
                                     <div className="col-sm-2">
-                                      <b>placement:</b> <p>{match_summoner_performance.level_placement}</p>{" "}
+                                      <b>level:</b> <p>{match_summoner_performance.level}</p>{" "}
+                                    </div>
+                                    <div className="col-sm-2">
+                                      <b>placement:</b> <p>{match_summoner_performance.placement}</p>{" "}
                                     </div>
                                     <div className="col-sm-2">
                                       <b>players eliminated:</b> <p>{match_summoner_performance.players_eliminated}</p>{" "}
