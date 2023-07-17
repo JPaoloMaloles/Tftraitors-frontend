@@ -3,8 +3,7 @@ import Accordion from "react-bootstrap/Accordion";
 export function MatchSummonerPerformance(props) {
   return (
     <div>
-      <h2> MatchSummonerPerformanceIndex</h2>
-      <p>{props.summonerInfo.summoner_name}</p>
+      <h2> Recent Matches</h2>
       <Accordion>
         {props.summonerInfo.match_summoner_performances.map((match_summoner_performance, index) => (
           <div key={match_summoner_performance.id}>

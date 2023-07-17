@@ -55,7 +55,6 @@ export function SummonerInfoIndex(props) {
                 </div>
 
                 <div className="container">
-                  <h2> Recent Matches </h2>
                   <MatchSummonerPerformance summonerInfo={summonerInfo} />
                 </div>
                 <p></p>
