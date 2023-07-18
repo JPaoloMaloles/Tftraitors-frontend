@@ -4,9 +4,9 @@ export function ImportSummonerInfo(props) {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    console.log("THIS IS params", event.target.elements.region.value);
-    console.log(event.target.region.value);
-    console.log(event.target.summonerName.value);
+    // console.log("THIS IS params", event.target.elements.region.value);
+    // console.log(event.target.region.value);
+    // console.log(event.target.summonerName.value);
     const params = new FormData(event.target);
     // const region = event.target.elements.region.value;
     // const summonerName = event.target.elements.summonerName.value;
