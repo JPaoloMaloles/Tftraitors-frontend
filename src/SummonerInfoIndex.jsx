@@ -26,6 +26,10 @@ export function SummonerInfoIndex(props) {
                         <p></p>
                       </div>
                       <div className="col-sm-5">
+                        <div className="card=text" style={{ textAlign: "center" }}>
+                          {" "}
+                          {summonerInfo.region}
+                        </div>
                         <div style={{ color: "red", fontSize: "16px", textAlign: "center" }}>
                           {summonerInfo.rank} {summonerInfo.tier}
                         </div>
