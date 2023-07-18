@@ -18,11 +18,11 @@ export function ImportSummonerInfo(props) {
   };
 
   if (props.isImportInProgress === true) {
-    console.log("aaaa");
+    // console.log("aaaa");
     updateState = "Importing...";
     updateColor = "red";
   } else if (props.isImportInProgress === false) {
-    console.log("bbbb");
+    // console.log("bbbb");
     updateState = "Importing... Done";
     updateColor = "green";
   }
