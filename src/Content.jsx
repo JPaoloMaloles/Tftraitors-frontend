@@ -72,7 +72,7 @@ export function Content() {
 
   const handleImportSummonerInfo = (/*region, summonerName, */ params, successCallback) => {
     // console.log("AAAAAAAAAAAAAAAAAAA", region, summonerName);
-    console.log("BBBBBBBBBBBBBBBBBBB", params.get("region"));
+    console.log("input handleImportSummonerInfo", params.get("region"), params.get("summonerName"));
     console.log("CCCCCCCCCCCCCCCCCCC", params.get("summonerName"));
 
     axios.post(`http://localhost:3000/riot_first.json`, params).then((response) => {
@@ -82,12 +82,12 @@ export function Content() {
       console.log("Summoner ID is:", response.data.id, params.get("region"));
       console.log("PUUID is:", response.data.puuid);
 
-      handleImportMatchId(params.get("region"), response.data.puuid, response.data.id);
+      handleImportMatchIds(params.get("region"), response.data.puuid, response.data.id);
       successCallback();
     });
   };
 
-  const handleImportMatchId = (region, puuid, summonerInfo_id) => {
+  const handleImportMatchIds = (region, puuid, summonerInfo_id) => {
     var tftRegion = {
       BR1: "americas",
       EUN1: "europe",
@@ -106,7 +106,7 @@ export function Content() {
       TW2: "sea",
       VN2: "sea",
     };
-    console.log("$$$$$$$$$$$$$$$$", tftRegion["BR1"]);
+    // console.log("$$$$$$$$$$$$$$$$", tftRegion["BR1"]);
     // if (region === "na1") {
     //   tftRegion = "americas";
     // }
@@ -115,7 +115,7 @@ export function Content() {
         params: { tftRegion: tftRegion[region], puuid: puuid, summonerInfo_id },
       })
       .then((response) => {
-        console.log("handleImportMatchId", response.data);
+        console.log("handleImportMatchIds", response.data);
         handleEachRiotMatchId(response.data, puuid);
       })
       .then(() => {
@@ -163,7 +163,7 @@ export function Content() {
       })
       .then((response) => {
         console.log(
-          `Parcipant Data for Match #${riot_match_id}, match_id: ${match_id}, summonerInfo_id:${summonerInfo_id}`,
+          `Participant Data for Match #${riot_match_id}, match_id: ${match_id}, summonerInfo_id:${summonerInfo_id}`,
           response
         );
         // Use update syntax to update the affected Matches and summonerInfos, use the id's to correlate them
@@ -183,24 +183,24 @@ export function Content() {
         //   );
         // });
       });
-    handleUpdateImport(summonerInfo_id);
+    // handleUpdateImport(summonerInfo_id);
   };
 
-  const handleUpdateImport = (id) => {
-    console.log("handleUpdateImport", id);
-    // axios.get(`http://localhost:3000/summoner_infos/${id}.json`).then((response) => {
-    //   console.log("REUPDATING", response.data);
-    //   setSummonerInfos(
-    //     summonerInfos.map((summonerInfo) => {
-    //       if (summonerInfo.id === response.data.id) {
-    //         return response.data;
-    //       } else {
-    //         return summonerInfo;
-    //       }
-    //     })
-    //   );
-    // });
-  };
+  // const handleUpdateImport = (id) => {
+  //   console.log("handleUpdateImport", id);
+  //   // axios.get(`http://localhost:3000/summoner_infos/${id}.json`).then((response) => {
+  //   //   console.log("REUPDATING", response.data);
+  //   //   setSummonerInfos(
+  //   //     summonerInfos.map((summonerInfo) => {
+  //   //       if (summonerInfo.id === response.data.id) {
+  //   //         return response.data;
+  //   //       } else {
+  //   //         return summonerInfo;
+  //   //       }
+  //   //     })
+  //   //   );
+  //   // });
+  // };
 
   useEffect(handleSetSummonerInfos, []);
 
