@@ -72,8 +72,12 @@ export function Content() {
 
   const handleImportSummonerInfo = (/*region, summonerName, */ params, successCallback) => {
     // console.log("AAAAAAAAAAAAAAAAAAA", region, summonerName);
-    console.log("input handleImportSummonerInfo", params.get("region"), params.get("summonerName"));
-    console.log("CCCCCCCCCCCCCCCCCCC", params.get("summonerName"));
+    console.log(
+      `input handleImportSummonerInfo`,
+      `region: ${params.get("region")}`,
+      `summonerName: ${params.get("summonerName")}`
+    );
+    // console.log("CCCCCCCCCCCCCCCCCCC", params.get("summonerName"));
 
     axios.post(`http://localhost:3000/riot_first.json`, params).then((response) => {
       console.log("handleImportSummonerInfo", response.data);
