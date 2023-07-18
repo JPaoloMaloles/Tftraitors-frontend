@@ -70,8 +70,8 @@ export function Content() {
     });
   };
 
-  const handleImportSummonerInfo = (region, summonerName, params, successCallback) => {
-    console.log("AAAAAAAAAAAAAAAAAAA", region, summonerName);
+  const handleImportSummonerInfo = (/*region, summonerName, */ params, successCallback) => {
+    // console.log("AAAAAAAAAAAAAAAAAAA", region, summonerName);
     console.log("BBBBBBBBBBBBBBBBBBB", params.get("region"));
     console.log("CCCCCCCCCCCCCCCCCCC", params.get("summonerName"));
 
