@@ -125,7 +125,7 @@ export function Content() {
       .then(() => {
         setTimeout(function () {
           axios.get(`http://localhost:3000/summoner_infos/${summonerInfo_id}.json`).then((response) => {
-            console.log("====================================================", response.data);
+            console.log("====================SummonerInfoImport====================", response.data);
             setSummonerInfos([...summonerInfos, response.data]);
             handleSetIsImportInProgress(false);
           });
@@ -134,27 +134,39 @@ export function Content() {
   };
 
   const handleEachRiotMatchId = (params, puuid) => {
-    console.log("handleImportMatches", params);
+    console.log("handleEachRiotMatchId", params);
     params["riot_match_ids"].forEach((riot_match_id) => {
-      console.log("iteration", params["tftRegion"], riot_match_id, params["summonerInfo_id"]);
+      // console.log("after handleEachRiotMatchId", params["tftRegion"], riot_match_id, params["summonerInfo_id"]);
       handleImportMatches(params["tftRegion"], riot_match_id, params["summonerInfo_id"], puuid);
     });
   };
 
   const handleImportMatches = (tftRegion, riot_match_id, summonerInfo_id, puuid) => {
-    console.log("handleImportMatchesBEFORE", `@${tftRegion}@`, `@${riot_match_id}@`, `@${summonerInfo_id}@`);
+    console.log(
+      "request handleImportMatches",
+      `tft_region: ${tftRegion}`,
+      `riot_match_id: ${riot_match_id}`,
+      `summonerInfo_id: ${summonerInfo_id}`
+    );
     axios
       .post(`http://localhost:3000/riot_third.json`, {
         params: { tftRegion: tftRegion, riot_match_id: riot_match_id, summonerInfo_id: summonerInfo_id },
       })
       .then((response) => {
-        console.log("handleImportMatchesAFTER", response.data);
+        console.log("handleImportMatches", response.data);
         handleImportMatchSummonerPerformances(tftRegion, riot_match_id, summonerInfo_id, response.data.id, puuid);
       });
   };
 
   const handleImportMatchSummonerPerformances = (tftRegion, riot_match_id, summonerInfo_id, match_id, puuid) => {
-    console.log("handleImportMatchSummonerPerformances", tftRegion, riot_match_id, summonerInfo_id, match_id, puuid);
+    // console.log(
+    //   "request handleImportMatchSummonerPerformances",
+    //   tftRegion,
+    //   riot_match_id,
+    //   summonerInfo_id,
+    //   match_id,
+    //   puuid
+    // );
     axios
       .post(`http://localhost:3000/riot_fourth.json`, {
         params: {
@@ -167,7 +179,7 @@ export function Content() {
       })
       .then((response) => {
         console.log(
-          `Participant Data for Match #${riot_match_id}, match_id: ${match_id}, summonerInfo_id:${summonerInfo_id}`,
+          `handleImportMatchSummonerPerformances Participant Data for Match #${riot_match_id}, match_id: ${match_id}, summonerInfo_id:${summonerInfo_id}`,
           response
         );
         // Use update syntax to update the affected Matches and summonerInfos, use the id's to correlate them
