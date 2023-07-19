@@ -40,7 +40,6 @@ export function SummonerInfoIndex(props) {
                       </div>
                     </div>
                   </div>
-
                   <div className="card=text">
                     <div className="row">
                       <div className="col-sm-2">
@@ -54,6 +53,8 @@ export function SummonerInfoIndex(props) {
                   <button type="input" onClick={() => props.handleSetIsSummonerInfoVisible(summonerInfo)}>
                     Show More
                   </button>
+                  <p></p>
+                  <a href={`/profile/${summonerInfo.region}/${summonerInfo.summoner_name}`}>PROFILE</a>
                   <p></p>
                 </div>
 

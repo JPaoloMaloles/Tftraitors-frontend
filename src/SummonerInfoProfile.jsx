@@ -1,10 +1,10 @@
 // import { useEffect } from "react";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 // import { MatchSummonerPerformance } from "./MatchSummonerPerformanceIndex";
 export function SummonerInfoProfile(props) {
   // // Get the userId param from the URL.
-  // const { param_region, param_summoner_name } = useParams();
-  // console.log("SummonerInfoProfile params", param_region, param_summoner_name);
+  const { param_region, param_summoner_name } = useParams();
+  console.log("SummonerInfoProfile params", param_region, param_summoner_name);
 
   // useEffect(() =>
   //   props.setCurrentSummonerInfo(
@@ -19,7 +19,9 @@ export function SummonerInfoProfile(props) {
 
   return (
     <div>
-      <h2> SummonerInfoProfile </h2>
+      <h1 style={{ color: "white" }}> SummonerInfoProfile </h1>
+      <p style={{ color: "white" }}> {param_region} </p>
+      <p style={{ color: "white" }}> {param_summoner_name} </p>
       {/* <div>
         <div className="card">
           <div id="top-card" style={{}}>
