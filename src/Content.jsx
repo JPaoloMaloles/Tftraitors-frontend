@@ -9,6 +9,7 @@ import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
 import { ImportSummonerInfo } from "./ImportSummonerInfo";
+import { SummonerInfoProfile } from "./SummonerInfoProfile";
 import { Routes, Route } from "react-router-dom";
 
 export function Content() {
@@ -218,6 +219,10 @@ export function Content() {
   //   // });
   // };
 
+  const handleSummonerProfile = (summonerInfo) => {
+    setCurrentSummonerInfo(summonerInfo);
+  };
+
   useEffect(handleSetSummonerInfos, []);
 
   return (
@@ -250,6 +255,16 @@ export function Content() {
                 />
               </Modal>
             </div>
+          }
+        />
+        <Route
+          path="profile/:param_region/:param_summoner_name"
+          element={
+            <SummonerInfoProfile
+              summonerInfos={summonerInfos}
+              handleSummonerProfile={handleSummonerProfile}
+              currentSummonerInfo={currentSummonerInfo}
+            />
           }
         />
       </Routes>
