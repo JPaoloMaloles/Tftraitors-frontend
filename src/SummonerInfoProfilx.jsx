@@ -17,7 +17,7 @@ export function SummonerInfoProfilx(props) {
   //   )
   // );
 
-  useEffect(props.handleSummonerProfile(summonerProfile), []);
+  // useEffect(props.handleSummonerProfile(summonerProfile), []);
   // console.log("setCurrentSummonerInfo", props.currentSummonerInfo);
   // ...
 

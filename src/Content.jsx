@@ -219,8 +219,12 @@ export function Content() {
   //   // });
   // };
 
-  const handleSummonerProfile = (summonerInfo) => {
-    setCurrentSummonerInfo(summonerInfo);
+  const handleSummonerProfile = (region, summonerName) => {
+    console.log("handleSummonerProfile", region, summonerName);
+    axios.get(`http://localhost:3000/profile/${region}/${summonerName}.json`).then((response) => {
+      console.log("FINISHED", response.data);
+      setCurrentSummonerInfo(response.data);
+    });
   };
 
   useEffect(handleSetSummonerInfos, []);
@@ -260,11 +264,21 @@ export function Content() {
         <Route
           path="profile/:param_region/:param_summoner_name"
           element={
-            <SummonerInfoProfile
-              summonerInfos={summonerInfos}
-              handleSummonerProfile={handleSummonerProfile}
-              currentSummonerInfo={currentSummonerInfo}
-            />
+            <div>
+              <SummonerInfoProfile
+                summonerInfos={summonerInfos}
+                handleSummonerProfile={handleSummonerProfile}
+                handleSetIsSummonerInfoVisible={handleSetIsSummonerInfoVisible}
+                currentSummonerInfo={currentSummonerInfo}
+              />
+              <Modal show={isSummonerInfoVisible} onClose={onClose}>
+                <SummonerInfoShow
+                  currentSummonerInfo={currentSummonerInfo}
+                  handleUpdateSummonerInfo={handleUpdateSummonerInfo}
+                  handleDestroySummonerInfo={handleDestroySummonerInfo}
+                />
+              </Modal>
+            </div>
           }
         />
       </Routes>

@@ -54,7 +54,7 @@ export function SummonerInfoIndex(props) {
                     Show More
                   </button>
                   <p></p>
-                  <a href={`/profile/${summonerInfo.region}/${summonerInfo.summoner_name}`}>PROFILE</a>
+                  <a href={`/profile/${summonerInfo.region}/${summonerInfo.summoner_name}`}>Go to Profile</a>
                   <p></p>
                 </div>
 

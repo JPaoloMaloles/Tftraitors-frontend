@@ -6,7 +6,7 @@ export function MatchSummonerPerformance(props) {
     <div>
       <h2> Recent Matches</h2>
       <Accordion>
-        {props.summonerInfo.match_summoner_performances.map((match_summoner_performance, index) => (
+        {props.summonerInfo.match_summoner_performances?.map((match_summoner_performance, index) => (
           <div key={match_summoner_performance.id}>
             <Accordion>
               <Accordion.Item eventKey={index}>

@@ -1,10 +1,10 @@
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import { MatchSummonerPerformance } from "./MatchSummonerPerformanceIndex";
+import { MatchSummonerPerformance } from "./MatchSummonerPerformanceIndex";
 export function SummonerInfoProfile(props) {
   // // Get the userId param from the URL.
   const { param_region, param_summoner_name } = useParams();
-  console.log("params", param_region, param_summoner_name);
+  // console.log("params", param_region, param_summoner_name);
 
   // the reason why this is erroring is because nothing this is essentially unordered code, so console.log cannot read summonerProfile.region because summonerProfile hasnt been set yet (and thus is undefined)
 
@@ -12,26 +12,35 @@ export function SummonerInfoProfile(props) {
   //   .filter((summonerInfo) => summonerInfo.region === param_region)
   //   .find((summoner_Info) => summoner_Info.summoner_name === param_summoner_name);
 
+  // console.log("SummonerProfile", summonerProfile);
   // console.log("Summoner Profile:", summonerProfile);
   // console.log("Summoner Profile:", summonerProfile.region);
 
+  useEffect(() => props.handleSummonerProfile(param_region, param_summoner_name), []);
+
   // useEffect(() =>
-  //   props.setCurrentSummonerInfo(
+  //   props.handleSummonerProfile(
   //     props.summonerInfos
   //       .filter((summonerInfo) => summonerInfo.region === param_region)
   //       .find((summoner_info) => summoner_info.summoner_name === param_summoner_name)
   //   )
   // );
 
-  // console.log("setCurrentSummonerInfo", props.currentSummonerInfo);
+  console.log("AAAAAAAAAAAAAA", props.currentSummonerInfo);
+  const summoner = props.currentSummonerInfo;
+  console.log("BBBBBBBBBBBBBB", typeof summoner);
   // // ...
 
   return (
     <div>
+      {console.log("Return has started")}
       <h1 style={{ color: "white" }}> SummonerInfoProfile </h1>
       <p style={{ color: "white" }}> {param_region} </p>
       <p style={{ color: "white" }}> {param_summoner_name} </p>
-      {/* <div>
+      <p style={{ color: "white" }}> {props.currentSummonerInfo.id} </p>
+
+      {/* <p style={{ color: "white" }}> {props.currentSummonerInfo.id} </p> */}
+      <div>
         <div className="card">
           <div id="top-card" style={{}}>
             <div className="card-body">
@@ -74,7 +83,7 @@ export function SummonerInfoProfile(props) {
                   <div className="col-sm-5">STAT DATA</div>
                 </div>
               </div>
-              <button type="input" onClick={() => props.handleSetIsSummonerInfoVisible(props.currenttSummonerInfo)}>
+              <button type="input" onClick={() => props.handleSetIsSummonerInfoVisible(props.currentSummonerInfo)}>
                 Show More
               </button>
               <p></p>
@@ -87,7 +96,7 @@ export function SummonerInfoProfile(props) {
           </div>
         </div>
         <p></p>
-      </div> */}
+      </div>
     </div>
   );
 }
