@@ -2,34 +2,9 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { MatchSummonerPerformance } from "./MatchSummonerPerformanceIndex";
 export function SummonerInfoProfile(props) {
-  // // Get the userId param from the URL.
   const { param_region, param_summoner_name } = useParams();
-  // console.log("params", param_region, param_summoner_name);
-
-  // the reason why this is erroring is because nothing this is essentially unordered code, so console.log cannot read summonerProfile.region because summonerProfile hasnt been set yet (and thus is undefined)
-
-  // let summonerProfile = props.summonerInfos
-  //   .filter((summonerInfo) => summonerInfo.region === param_region)
-  //   .find((summoner_Info) => summoner_Info.summoner_name === param_summoner_name);
-
-  // console.log("SummonerProfile", summonerProfile);
-  // console.log("Summoner Profile:", summonerProfile);
-  // console.log("Summoner Profile:", summonerProfile.region);
 
   useEffect(() => props.handleSummonerProfile(param_region, param_summoner_name), []);
-
-  // useEffect(() =>
-  //   props.handleSummonerProfile(
-  //     props.summonerInfos
-  //       .filter((summonerInfo) => summonerInfo.region === param_region)
-  //       .find((summoner_info) => summoner_info.summoner_name === param_summoner_name)
-  //   )
-  // );
-
-  console.log("AAAAAAAAAAAAAA", props.currentSummonerInfo);
-  const summoner = props.currentSummonerInfo;
-  console.log("BBBBBBBBBBBBBB", typeof summoner);
-  // // ...
 
   return (
     <div>
