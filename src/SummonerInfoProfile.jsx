@@ -8,13 +8,14 @@ export function SummonerInfoProfile(props) {
 
   return (
     <div>
-      {console.log("Return has started")}
+      {/* {console.log("Return has started")}
       <h1 style={{ color: "white" }}> SummonerInfoProfile </h1>
       <p style={{ color: "white" }}> {param_region} </p>
       <p style={{ color: "white" }}> {param_summoner_name} </p>
-      <p style={{ color: "white" }}> {props.currentSummonerInfo.id} </p>
+      <p style={{ color: "white" }}> {props.currentSummonerInfo.id} </p> */}
 
       {/* <p style={{ color: "white" }}> {props.currentSummonerInfo.id} </p> */}
+      <p></p>
       <div>
         <div className="card">
           <div id="top-card" style={{}}>
@@ -23,7 +24,7 @@ export function SummonerInfoProfile(props) {
                 <div className="row">
                   <div className="col-sm-3">
                     <img
-                      src={"https://dotesports.com/wp-content/uploads/2023/07/TFT_Mortdog.jpg?w=1200"}
+                      src={`https://raw.communitydragon.org/pbe/game/assets/ux/summonericons/profileicon${props.currentSummonerInfo?.profile_icon_id}.png`}
                       style={{ width: "120px" }}
                     />
                   </div>

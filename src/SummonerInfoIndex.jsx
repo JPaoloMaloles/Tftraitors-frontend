@@ -16,7 +16,7 @@ export function SummonerInfoIndex(props) {
                     <div className="row">
                       <div className="col-sm-3">
                         <img
-                          src={"https://dotesports.com/wp-content/uploads/2023/07/TFT_Mortdog.jpg?w=1200"}
+                          src={`https://raw.communitydragon.org/pbe/game/assets/ux/summonericons/profileicon${summonerInfo?.profile_icon_id}.png`}
                           style={{ width: "120px" }}
                         />
                       </div>
