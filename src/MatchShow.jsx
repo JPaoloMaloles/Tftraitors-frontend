@@ -29,10 +29,14 @@ export function MatchShow(props) {
                   <b>game_datetime:</b>{" "}
                   <p>
                     {new Date(
-                      props.summonerInfo.matches[props.MatchSummonerPerformanceIndex].game_datetime
+                      props.summonerInfo.matches.find(
+                        (match) => match.riot_match_id == props.MatchSummonerPerformance.riot_match_id
+                      ).game_datetime
                     ).toLocaleDateString("en-US")}{" "}
                     {new Date(
-                      props.summonerInfo.matches[props.MatchSummonerPerformanceIndex].game_datetime
+                      props.summonerInfo.matches.find(
+                        (match) => match.riot_match_id == props.MatchSummonerPerformance.riot_match_id
+                      ).game_datetime
                     ).toLocaleTimeString("en-US")}
                   </p>
                 </div>

@@ -2,28 +2,88 @@ import Accordion from "react-bootstrap/Accordion";
 import { MatchShow } from "./MatchShow";
 
 export function MatchSummonerPerformance(props) {
+  var sorted = props.summonerInfo.match_summoner_performances?.sort((a, b) =>
+    props.summonerInfo.matches.find((match) => match.riot_match_id == a.riot_match_id).game_datetime >
+    props.summonerInfo.matches.find((match) => match.riot_match_id == b.riot_match_id).game_datetime
+      ? -1
+      : props.summonerInfo.matches.find((match) => match.riot_match_id == b.riot_match_id).game_datetime >
+        props.summonerInfo.matches.find((match) => match.riot_match_id == a.riot_match_id).game_datetime
+      ? 1
+      : 0
+  );
+  {
+    new Date().toLocaleTimeString("en-US");
+  }
+  console.log(
+    "AAAAA",
+    props.summonerInfo.match_summoner_performances.map(
+      (single) => props.summonerInfo.matches.find((match) => match.riot_match_id == single.riot_match_id).game_datetime
+    )
+  );
+  console.log(
+    "BBBBBBBB",
+    props.summonerInfo.match_summoner_performances.map((single) =>
+      new Date(
+        props.summonerInfo.matches.find((match) => match.riot_match_id == single.riot_match_id).game_datetime
+      ).toLocaleTimeString("en-US")
+    )
+  );
+  // STOPPPING POINT YOU ARE COMPARING UNIX TIMESTAMPS
+
+  // console.log("==============", props.summonerInfo.match_summoner_performances);
+  console.log("SORTED NOW)", sorted);
+  console.log(
+    "==========",
+    sorted.map((single) =>
+      new Date(
+        props.summonerInfo.matches.find((match) => match.riot_match_id == single.riot_match_id).game_datetime
+      ).toLocaleDateString("en-US")
+    )
+  );
+
+  console.log(
+    "++++++++++",
+    sorted.map((single) =>
+      new Date(
+        props.summonerInfo.matches.find((match) => match.riot_match_id == single.riot_match_id).game_datetime
+      ).toLocaleTimeString("en-US")
+    )
+  );
+
+  // console.log(
+  //   "ORIGINAL",
+  //   props.summonerInfo.match_summoner_performances?.map((a) => a)
+  // );
+  // console.log(
+  //   "SORTED",
+  //   props.summonerInfo.match_summoner_performances
+  //     ?.sort((a, b) => (a.placement > b.placement ? 1 : b.placement > a.placement ? -1 : 0))
+  //     .map((a) => a)
+  // );
   return (
     <div>
       <h2> Recent Matches</h2>
       <Accordion>
-        {props.sort}
         {props.summonerInfo.match_summoner_performances?.map((match_summoner_performance, index) => (
           <div key={match_summoner_performance.id}>
             <Accordion>
               <Accordion.Item eventKey={index}>
                 <Accordion.Header>
-                  <div className="row">
-                    <div className="col-sm-2">Match #{index + 1}</div>
-                    <div className="col-sm-4">{props.summonerInfo.matches[index].game_datetime}</div>
-                    <div className="col-sm-3">
-                      Date:{"      "}
-                      {new Date(props.summonerInfo.matches[index].game_datetime).toLocaleDateString("en-US")}
-                    </div>
-                    <div className="col-sm-3">
-                      Time:
-                      {"      "}
-                      {new Date(props.summonerInfo.matches[index].game_datetime).toLocaleTimeString("en-US")}{" "}
-                    </div>
+                  <div className="col-sm-9">Match #{index + 1}</div>
+                  {/* <div className="col-sm-4">{props.summonerInfo.matches[index].game_datetime}</div> */}
+                  <div className="col-sm-1">
+                    {new Date(
+                      props.summonerInfo.matches.find(
+                        (match) => match.riot_match_id == match_summoner_performance.riot_match_id
+                      ).game_datetime
+                    ).toLocaleDateString("en-US")}
+                  </div>
+                  <div className="col-sm-1">
+                    {new Date(
+                      props.summonerInfo.matches.find(
+                        (match) => match.riot_match_id == match_summoner_performance.riot_match_id
+                      ).game_datetime
+                    ).toLocaleTimeString("en-US")}
                   </div>
                 </Accordion.Header>
                 <Accordion.Body>
@@ -83,7 +143,12 @@ export function MatchSummonerPerformance(props) {
                       </div>
                     </div>
                   </div>
-                  <MatchShow summonerInfo={props.summonerInfo} MatchSummonerPerformanceIndex={index} />
+                  e
+                  <MatchShow
+                    summonerInfo={props.summonerInfo}
+                    MatchSummonerPerformanceIndex={index}
+                    MatchSummonerPerformance={match_summoner_performance}
+                  />
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
