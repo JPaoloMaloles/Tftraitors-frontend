@@ -6,11 +6,26 @@ export function MatchSummonerPerformance(props) {
     <div>
       <h2> Recent Matches</h2>
       <Accordion>
+        {props.sort}
         {props.summonerInfo.match_summoner_performances?.map((match_summoner_performance, index) => (
           <div key={match_summoner_performance.id}>
             <Accordion>
               <Accordion.Item eventKey={index}>
-                <Accordion.Header> Match #{index + 1} </Accordion.Header>
+                <Accordion.Header>
+                  <div className="row">
+                    <div className="col-sm-2">Match #{index + 1}</div>
+                    <div className="col-sm-4">{props.summonerInfo.matches[index].game_datetime}</div>
+                    <div className="col-sm-3">
+                      Date:{"      "}
+                      {new Date(props.summonerInfo.matches[index].game_datetime).toLocaleDateString("en-US")}
+                    </div>
+                    <div className="col-sm-3">
+                      Time:
+                      {"      "}
+                      {new Date(props.summonerInfo.matches[index].game_datetime).toLocaleTimeString("en-US")}{" "}
+                    </div>
+                  </div>
+                </Accordion.Header>
                 <Accordion.Body>
                   <div style={{ fontSize: "13px" }}>
                     <div className="row" style={{ backgroundColor: "#E5F3FD" }}>
