@@ -27,7 +27,14 @@ export function MatchShow(props) {
                 </div>
                 <div className="col-sm-3">
                   <b>game_datetime:</b>{" "}
-                  <p>{props.summonerInfo.matches[props.MatchSummonerPerformanceIndex].game_datetime}</p>
+                  <p>
+                    {new Date(
+                      props.summonerInfo.matches[props.MatchSummonerPerformanceIndex].game_datetime
+                    ).toLocaleDateString("en-US")}{" "}
+                    {new Date(
+                      props.summonerInfo.matches[props.MatchSummonerPerformanceIndex].game_datetime
+                    ).toLocaleTimeString("en-US")}
+                  </p>
                 </div>
                 <div className="col-sm-3">
                   <b>queu_id:</b> <p>{props.summonerInfo.matches[props.MatchSummonerPerformanceIndex].queu_id}</p>
