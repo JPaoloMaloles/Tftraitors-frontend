@@ -140,7 +140,7 @@ export function MatchSummonerPerformance(props) {
                       </div>
                     </div>
                   </div>
-                  e
+
                   <MatchShow
                     summonerInfo={props.summonerInfo}
                     MatchSummonerPerformanceIndex={index}
