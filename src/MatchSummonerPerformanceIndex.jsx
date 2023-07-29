@@ -11,30 +11,27 @@ export function MatchSummonerPerformance(props) {
       ? 1
       : 0
   );
-  {
-    new Date().toLocaleTimeString("en-US");
-  }
+
   console.log(
     "AAAAA",
-    props.summonerInfo.match_summoner_performances.map(
+    props.summonerInfo.match_summoner_performances?.map(
       (single) => props.summonerInfo.matches.find((match) => match.riot_match_id == single.riot_match_id).game_datetime
     )
   );
   console.log(
     "BBBBBBBB",
-    props.summonerInfo.match_summoner_performances.map((single) =>
+    props.summonerInfo.match_summoner_performances?.map((single) =>
       new Date(
         props.summonerInfo.matches.find((match) => match.riot_match_id == single.riot_match_id).game_datetime
       ).toLocaleTimeString("en-US")
     )
   );
-  // STOPPPING POINT YOU ARE COMPARING UNIX TIMESTAMPS
 
   // console.log("==============", props.summonerInfo.match_summoner_performances);
   console.log("SORTED NOW)", sorted);
   console.log(
     "==========",
-    sorted.map((single) =>
+    sorted?.map((single) =>
       new Date(
         props.summonerInfo.matches.find((match) => match.riot_match_id == single.riot_match_id).game_datetime
       ).toLocaleDateString("en-US")
@@ -43,7 +40,7 @@ export function MatchSummonerPerformance(props) {
 
   console.log(
     "++++++++++",
-    sorted.map((single) =>
+    sorted?.map((single) =>
       new Date(
         props.summonerInfo.matches.find((match) => match.riot_match_id == single.riot_match_id).game_datetime
       ).toLocaleTimeString("en-US")
