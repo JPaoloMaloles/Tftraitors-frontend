@@ -135,6 +135,11 @@ export function MatchSummonerPerformance(props) {
                       <div className="col-sm-5">
                         <b>augments:</b>
                         <div>{match_summoner_performance.first_augment}</div>
+                        <img
+                          src="src/assets/dragontail-13.13.1/13.13.1/img/tft-augment/A-Cut-Above-II.TFT_Set9.png"
+                          style={{ width: "120px" }}
+                        ></img>
+                        {/* ex TFT9_Augment_VoidEmblem2, use regex to parse out '9' from TFT9 and any word using capitalized first letters to parse into A-Cut-Above-II format */}
                         <div>{match_summoner_performance.second_augment}</div>
                         <div>{match_summoner_performance.third_augment}</div>
                       </div>
