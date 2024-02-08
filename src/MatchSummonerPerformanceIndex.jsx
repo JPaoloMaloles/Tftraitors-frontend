@@ -132,6 +132,18 @@ export function MatchSummonerPerformance(props) {
                       </div>
                     </div>
                     <div className="row" style={{ backgroundColor: "#F5FBFF" }}>
+                      <div>
+                        {match_summoner_performance.units.map((unit) => (
+                          <div key={`unit-${match_summoner_performance.id}-${unit.id}`}>
+                            <div>
+                              {unit.character_id_name} - {unit.tier}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <p></p>
+                    </div>
+                    <div className="row" style={{ backgroundColor: "#F5FBFF" }}>
                       <div className="col-sm-5">
                         <b>augments:</b>
                         <div>{match_summoner_performance.first_augment}</div>
@@ -150,6 +162,21 @@ export function MatchSummonerPerformance(props) {
                             src={`src/assets/images/data-dragon-images/img/tft-augment/${match_summoner_performance.third_augment}`}
                             style={{ width: "50px" }}
                           ></img>
+                        </div>
+                      </div>
+                      <div className="col-sm-5">
+                        <div>
+                          {match_summoner_performance.traits.map((trait) => {
+                            if (trait.tier_current > 0) {
+                              return (
+                                <div key={`trait-${match_summoner_performance.id}-${trait.id}`}>
+                                  <div>
+                                    {trait.name} - {trait.tier_current}/{trait.tier_total}
+                                  </div>
+                                </div>
+                              );
+                            }
+                          })}
                         </div>
                       </div>
                     </div>
