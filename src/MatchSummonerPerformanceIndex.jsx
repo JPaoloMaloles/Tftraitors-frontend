@@ -137,6 +137,10 @@ export function MatchSummonerPerformance(props) {
                           <div key={`unit-${match_summoner_performance.id}-${unit.id}`}>
                             <div>
                               {unit.character_id_name} - {unit.tier}
+                              <img
+                                src={`src/assets/images/tft-images/tft-champion/${unit.character_id_name}.TFT_set10.png`}
+                                style={{ width: "50px" }}
+                              ></img>
                             </div>
                           </div>
                         ))}
