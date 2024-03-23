@@ -25,3 +25,6 @@ Then, paste the following anywhere, with [your_key] being the API key you receiv
 Environment variables are only loaded up when the terminal app is first booted up, thus in order to use the changes made to environment variables you must either quit and reopen terminal or use the following code on your existing terminal windows to refresh them:
 <pre><code> source ~/.zshrc
 </code></pre>
+
+<h1> Usage </h1>
+<h1> Roadmap</h1>
