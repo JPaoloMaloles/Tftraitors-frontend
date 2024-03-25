@@ -4,7 +4,7 @@ Tftraitors is project to create a Teamfight Tactics (tft) datalytics site that c
 
 Tftraitors is made using a React frontend and Ruby on Rails backend.
 
-<h1> Current Features</h1>
+<h1> Features</h1>
 <ul>
   <li> User authorization and authentication </li>
   <li> Imports of a player's 20 most recent matches from any of Riot's 16 servers using asynchronous web requests </li>
