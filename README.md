@@ -7,7 +7,7 @@ Tftraitors is made using a React frontend and Ruby on Rails backend.
 <h1> Features</h1>
 <ul>
   <li> User authorization and authentication </li>
-  <li> Imports of a player's 20 most recent matches from any of Riot's 16 servers using asynchronous web requests </li>
+  <li> Imports up to 20 of a player's most recent matches from any of Riot's 16 servers using asynchronous web requests </li>
   <li> Routes using react-router-dom </li>
   <li> A beautiful display made with javascript and bootstrap</li>
 </ul>
