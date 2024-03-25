@@ -6,10 +6,10 @@ Tftraitors is made using a React frontend and Ruby on Rails backend.
 
 <h1> Features</h1>
 <ul>
-  <li> User authorization and authentication </li>
-  <li> Imports up to 20 of a player's most recent matches from any of Riot's 16 servers using asynchronous web requests </li>
-  <li> Routes using react-router-dom </li>
-  <li> A beautiful display made with javascript and bootstrap</li>
+  <li>User authorization and authentication </li>
+  <li>Imports up to 20 of a player's most recent matches from any of Riot's 16 servers using asynchronous web requests </li>
+  <li>Routes using react-router-dom </li>
+  <li>A beautiful display made with javascript and bootstrap</li>
 </ul>
 
 <h1> Setup</h1>
@@ -19,19 +19,19 @@ Use of TFTraitors currently requires a Riot API Key as an environment variable.
 <h3>Acquiring and Implementing Riot API Keys</h3>
 The following is how to do so using the zsh shell.
 <ol>
-<li> Head to the <a href="https://developer.riotgames.com">Riot Games Dev Site</a>. </li>
-<li> Log in to an account. You will be redirected to a page where you can generate an API key.</li>
-<li> Confirm you are not a robot and click "REGENERATE API KEY"</li>
-<li> Click "Copy" next to the newly generated key</li>
+<li>Head to the <a href="https://developer.riotgames.com">Riot Games Dev Site</a>. </li>
+<li>Log in to an account. You will be redirected to a page where you can generate an API key.</li>
+<li>Confirm you are not a robot and click "REGENERATE API KEY"</li>
+<li>Click "Copy" next to the newly generated key</li>
 In your terminal:
 <li>Open your environment variables in a text editor by entering the following:
-<pre><code> code ~/.zshrc
+<pre><code>code ~/.zshrc
 </code></pre></li>
 <li>Then, paste the following on a new or empty line anywhere, with [your_key] being the API key you received.
-<pre><code> export RIOT_API_KEY='[your_key]'
+<pre><code>export RIOT_API_KEY='[your_key]'
 </code></pre></li>
 <li>Environment variables are only loaded up when the terminal app is first booted up, thus you must either quit and reopen your terminal, or use the following code on every terminal tab you have open to refresh them:
-<pre><code> source ~/.zshrc
+<pre><code>source ~/.zshrc
 </code></pre></li>
 <li>Riot Api Keys expire after 24 hours, you will need to redo the above processes if you wish to run TFTraitors after 24 hours of generating a key.</li>
 </ol>
