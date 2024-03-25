@@ -13,11 +13,11 @@ Tftraitors is made using a React frontend and Ruby on Rails backend.
 </ul>
 
 <h1> Setup</h1>
-These instructions accounts for setting up both the frontend and backend repositories.
-<h3>Acquiring and Implementing A Riot API Key</h3>
-Use of TFTraitors currently requires a riot api key as an environment variable. The following is how to do so using the zsh shell.
-
-If you do not have a Riot API Key:
+These instructions accounts for setting up both the frontend and backend repositories.<div></div>
+Use of TFTraitors currently requires a Riot API Key as an environment variable.
+<p></p>
+<h3>Acquiring and Implementing Riot API Keys</h3>
+The following is how to do so using the zsh shell.
 <ol>
 <li> Head to the <a href="https://developer.riotgames.com">Riot Games Dev Site</a>. </li>
 <li> Log in to an account. You will be redirected to a page where you can generate an API key.</li>
@@ -33,6 +33,11 @@ In your terminal:
 <li>Environment variables are only loaded up when the terminal app is first booted up, thus you must either quit and reopen your terminal, or use the following code on every terminal tab you have open to refresh them:
 <pre><code> source ~/.zshrc
 </code></pre></li>
+<li>Riot Api Keys expire after 24 hours, you will need to redo the above processes if you wish to run TFTraitors after 24 hours of generating a key.</li>
+</ol>
+<h3>Setting up TFTraitors</h3>
+Now that we have a Riot API Key as an environment variable we can set up the front and back end
+<ol>
 <li>Clone the repository and enter the project folder
 <pre><code>git clone https://github.com/JPaoloMaloles/Tftraitors-frontend.git
 git clone https://github.com/JPaoloMaloles/Tftraitors-backend.git
