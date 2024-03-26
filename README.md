@@ -7,7 +7,7 @@ Tftraitors is made using a React frontend and Ruby on Rails backend.
 
 <h6>Notice: TFTraitors was designed with set 9 and 10 in mind. As set 11 has begun, as of 3/20/24, some features are non-functional as we adapt to changes in the Riot API.</h6>
 
-<h1> Features</h1>
+<h1>Features</h1>
 <ul>
   <li>User authorization and authentication </li>
   <li>Imports up to 20 of a player's most recent matches from any of Riot's 16 servers using asynchronous web requests </li>
@@ -15,7 +15,7 @@ Tftraitors is made using a React frontend and Ruby on Rails backend.
   <li>A beautiful display made with javascript and bootstrap</li>
 </ul>
 
-<h1> Setup</h1>
+<h1>Setup</h1>
 These instructions accounts for setting up both the frontend and backend repositories.<div></div>
 Use of TFTraitors currently requires a Riot API Key as an environment variable.
 <p></p>
@@ -26,8 +26,7 @@ The following is how to do so using the zsh shell.
 <li>Log in to an account. You will be redirected to a page where you can generate an API key.</li>
 <li>Confirm you are not a robot and click "REGENERATE API KEY"</li>
 <li>Click "Copy" next to the newly generated key</li>
-In your terminal:
-<li>Open your environment variables in a text editor by entering the following:
+<li>Open your environment variables in a text editor by entering the following in your terminal.
 <pre><code>code ~/.zshrc
 </code></pre></li>
 <li>Then, paste the following on a new or empty line anywhere, with [your_key] being the API key you received.
@@ -86,6 +85,10 @@ npm install react-router-dom
   <li>When the player data is acquired, the text will change to "Importing... Done" in green and the summoner info will appear at the top of "SummonerInfoIndex"</li>
 </ol>
 <h3>Account Features</h3>
-For ease of use, Importing Player Info has been made exempt from authentication. There are currently no public-facing features locked behind account ownage.
-<h3></h3>
-<h1> Roadmap</h1>
+There are currently no public use features locked behind account ownage, only admin controls. 
+<p></p>
+Admin account credentials are located in <a href="db/seeds.rb">db/seeds.rb</a>.
+<p></p>
+When logged into an Admin account, users may click on "Show More" to Update and Destroy Summoner Info.
+
+<h1>Roadmap</h1>
