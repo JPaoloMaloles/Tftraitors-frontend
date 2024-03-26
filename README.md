@@ -77,10 +77,15 @@ npm install react-router-dom
 </ol>
 
 <h1> Usage </h1>
+<h3>Looking Up Player Info</h3>
 <ol>
-  <li>Head to the section called "Import Summoner Info" and click on the entry section of "Region" to reveal a dropdown menu of region tags.</li>
-  <li>Input the desired Summoner Name of the person you wish to search</li>
-  <li>Click Import Summoner Info, a text saying "Importing..." will appear in red</li>
-  <li>When done, the text will change to "Importing... Done" in green and the summoner info will appear at the top of "SummonerInfoIndex"</li>
+  <li>Head to the section called "Import Summoner Info".</li> 
+  <li>Click on the entry field below "Region" to reveal a dropdown menu of region tags. Select your desired region.</li>
+  <li>In the entry field below Summoner Name, input the desired Summoner Name of the person you wish to search.</li>
+  <li>Click "Import Summoner Info," a text saying "Importing..." will appear in red while loading the information</li>
+  <li>When the player data is acquired, the text will change to "Importing... Done" in green and the summoner info will appear at the top of "SummonerInfoIndex"</li>
 </ol>
+<h3>Account Features</h3>
+For ease of use, Importing Player Info has been made exempt from authentication. There are currently no features locked behind account ownage.
+<h3></h3>
 <h1> Roadmap</h1>
