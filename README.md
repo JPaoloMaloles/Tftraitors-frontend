@@ -87,7 +87,7 @@ npm install react-router-dom
 <h3>Account Features</h3>
 There are currently no public use features locked behind account ownage, only admin controls. 
 <p></p>
-Admin account credentials are located in <a href="db/seeds.rb">db/seeds.rb</a>.
+Admin account credentials are located in <a href="Tftraitors/Tftraitors_backend/db/seeds.rb">db/seeds.rb</a>.
 <p></p>
 When logged into an Admin account, users may click on "Show More" to Update and Destroy Summoner Info.
 
