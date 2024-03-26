@@ -86,6 +86,6 @@ npm install react-router-dom
   <li>When the player data is acquired, the text will change to "Importing... Done" in green and the summoner info will appear at the top of "SummonerInfoIndex"</li>
 </ol>
 <h3>Account Features</h3>
-For ease of use, Importing Player Info has been made exempt from authentication. There are currently no features locked behind account ownage.
+For ease of use, Importing Player Info has been made exempt from authentication. There are currently no public-facing features locked behind account ownage.
 <h3></h3>
 <h1> Roadmap</h1>
