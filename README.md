@@ -1,8 +1,11 @@
 [backend repo](https://github.com/JPaoloMaloles/Tftraitors_backend)
 
+
 Tftraitors is project to create a Teamfight Tactics (tft) datalytics site that compiles a player's worst comps and performances whether it be for good or evil. Riot assets acquired through the use of CommunityDragon Toolbox (CDTB).
 
 Tftraitors is made using a React frontend and Ruby on Rails backend.
+
+<h6>Notice: TFTraitors was designed with set 9 and 10 in mind. As set 11 has begun, as of 3/20/24, some features are non-functional as we adapt to changes in the Riot API.</h6>
 
 <h1> Features</h1>
 <ul>
@@ -46,9 +49,13 @@ cd Tftraitors-backend
   <li> Install Gems
   <pre><code>bundle install</code></pre>
   </li>
+  <li>Generate a master key. Close the tab that the code opens in your text editor.
+<div></div>If you receive a security warning, continue to open the file. It exists as master key is part of encryption.</li>
+  <pre><code>rm config/credentials.yml.enc
+rails credentials:edit</code></pre>
+  </li>
   <li> Set up Database
   <pre><code>rails db:reset</code></pre>
-  </li>
   <li> Run Server
   <pre><code>rails server</code></pre>
   </li>
