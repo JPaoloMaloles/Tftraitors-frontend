@@ -1,7 +1,7 @@
 [backend repo](https://github.com/JPaoloMaloles/Tftraitors_backend)
 
 <div align="center">
-<img src="src/assets/images/TFTraitors-bannertwo.png?raw=true" width=100%/>
+<img src="src/assets/images/TFTraitors-bannerthree.png?raw=true" width=100%/>
 </div>
 
 Tftraitors is project to create a Teamfight Tactics (tft) datalytics site that compiles a player's worst comps and performances whether it be for good or evil. Riot assets acquired through the use of CommunityDragon Toolbox (CDTB).
