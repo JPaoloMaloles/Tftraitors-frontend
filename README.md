@@ -1,11 +1,12 @@
 [backend repo](https://github.com/JPaoloMaloles/Tftraitors_backend)
 
-
 Tftraitors is project to create a Teamfight Tactics (tft) datalytics site that compiles a player's worst comps and performances whether it be for good or evil. Riot assets acquired through the use of CommunityDragon Toolbox (CDTB).
 
 Tftraitors is made using a React frontend and Ruby on Rails backend.
 
 <h6>Notice: TFTraitors was designed with set 9 and 10 in mind. As set 11 has begun, as of 3/20/24, some features are non-functional as we adapt to changes in the Riot API.</h6>
+
+<img src="src/assets/images/tftraitors-firstcrop.png?raw=true" alt="drawing" width=100%/>
 
 <h1>Features</h1>
 <ul>
@@ -77,6 +78,7 @@ npm install react-router-dom
 
 <h1> Usage </h1>
 <h3>Looking Up Player Info</h3>
+<img src="src/assets/images/tftraitors-importSummonerInfo.png?raw=true" alt="drawing" width=100%/>
 <ol>
   <li>Head to the section called "Import Summoner Info".</li> 
   <li>Click on the entry field below "Region" to reveal a dropdown menu of region tags. Select your desired region.</li>
