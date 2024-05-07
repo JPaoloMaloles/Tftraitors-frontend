@@ -8,8 +8,6 @@ Tftraitors is project to create a Teamfight Tactics (tft) datalytics site that c
 
 Tftraitors is made using a React frontend and Ruby on Rails backend.
 
-<h6>Notice: TFTraitors was designed with set 9 and 10 in mind. As set 11 has begun, as of 3/20/24, some features are non-functional as we adapt to changes in the Riot API.</h6>
-
 <img src="src/assets/images/tftraitors-firstcrop.png?raw=true" alt="drawing" width=100%/>
 
 <h1>Features</h1>
