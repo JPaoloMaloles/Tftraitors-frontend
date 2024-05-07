@@ -71,6 +71,13 @@ export function ImportSummonerInfo(props) {
             <p>
               <input name="summonerName" type="text"></input>
             </p>
+            <div>
+              #Tagline:
+              {/* set this to lowercase in axios request */}
+            </div>
+            <p>
+              <input name="tagline" type="text"></input>
+            </p>
             <p></p>
             <button type="submit"> Import Summoner Info </button>{" "}
             <div style={{ color: updateColor }}> {updateState}</div>
