@@ -155,7 +155,9 @@ export function Content() {
       })
       .then((response) => {
         console.log("handleImportMatches", response.data);
-        handleImportMatchSummonerPerformances(tftRegion, riot_match_id, summonerInfo_id, response.data.id, puuid);
+        if (response.data.message != "This match already exists") {
+          handleImportMatchSummonerPerformances(tftRegion, riot_match_id, summonerInfo_id, response.data.id, puuid);
+        }
       });
   };
 
