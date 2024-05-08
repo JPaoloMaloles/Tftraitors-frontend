@@ -133,7 +133,7 @@ export function MatchSummonerPerformance(props) {
                     </div>
                     <div className="row" style={{ backgroundColor: "#F5FBFF" }}>
                       <div>
-                        {match_summoner_performance.units.map((unit) => (
+                        {match_summoner_performance.units?.map((unit) => (
                           <div key={`unit-${match_summoner_performance.id}-${unit.id}`}>
                             <div>
                               {unit.character_id_name} - {unit.tier}
@@ -170,7 +170,7 @@ export function MatchSummonerPerformance(props) {
                       </div>
                       <div className="col-sm-5">
                         <div>
-                          {match_summoner_performance.traits.map((trait) => {
+                          {match_summoner_performance.traits?.map((trait) => {
                             if (trait.tier_current > 0) {
                               return (
                                 <div key={`trait-${match_summoner_performance.id}-${trait.id}`}>
