@@ -169,6 +169,7 @@ export function MatchSummonerPerformance(props) {
                         </div>
                       </div>
                       <div className="col-sm-5">
+                        {console.log("THIS IS THE TRAITS", match_summoner_performance)}
                         <div>
                           {match_summoner_performance.traits?.map((trait) => {
                             if (trait.tier_current > 0) {
